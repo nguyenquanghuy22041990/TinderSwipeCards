@@ -1,0 +1,6 @@
+framework module Pods_TinderSwipeCards {
+  umbrella header "Pods-TinderSwipeCards-umbrella.h"
+
+  export *
+  module * { export * }
+}

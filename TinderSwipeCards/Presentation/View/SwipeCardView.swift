@@ -12,6 +12,7 @@ import Kingfisher
 
 class SwipeCardView: SwipeableCardViewCard {
 
+    @IBOutlet weak var roundedProfileView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -29,23 +30,49 @@ class SwipeCardView: SwipeableCardViewCard {
     private var disposeBag: DisposeBag? = nil
     var swipeCardViewModel: SwipeCardViewModel!
     
-    // Shadow View
-    private weak var shadowView: UIView?
-    
-    /// Inner Margin
-    private static let kInnerMargin: CGFloat = 20.0
-    
+  private var shadowLayer: CAShapeLayer?
+
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    shadowLayer = createAndAddShadowLayer(background: .white, shadowWid: 20, shadowHei: 30)
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+
     override func awakeFromNib() {
         superview?.awakeFromNib()
-    
     }
     
     
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        configureShadow()
+//        configureShadow()
+      shadowLayer?.path = UIBezierPath(roundedRect: bounds, cornerRadius: shadowLayer?.cornerRadius ?? 5).cgPath
+      shadowLayer?.shadowPath = shadowLayer?.path
+
+        roundedProfileView.layer.borderWidth = 1.0
+        roundedProfileView.layer.borderColor = UIColor.gray.cgColor
     }
+
+  func createAndAddShadowLayer(background: UIColor,
+                               shadowRadius: CGFloat = 8,
+                               shadowColor: UIColor = UIColor(white: 0, alpha: 0.1), cornerRadius: CGFloat = 5, shadowWid: CGFloat, shadowHei: CGFloat) -> CAShapeLayer {
+    let shadowLayer = CAShapeLayer()
+    shadowLayer.fillColor = background.cgColor
+    shadowLayer.shadowColor = shadowColor.cgColor
+    shadowLayer.shadowOffset = CGSize(width: shadowWid, height: shadowHei)
+    shadowLayer.shadowOpacity = 1
+    shadowLayer.shadowRadius = shadowRadius
+    shadowLayer.cornerRadius = cornerRadius
+    shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
+    shadowLayer.shadowPath = shadowLayer.path
+    self.layer.insertSublayer(shadowLayer, at: 0)
+
+    return shadowLayer
+  }
     
     func setUpView(swipeCardViewModel: SwipeCardViewModel!, disposeBag: DisposeBag!) {
         self.swipeCardViewModel = swipeCardViewModel
@@ -121,7 +148,7 @@ class SwipeCardView: SwipeableCardViewCard {
 
         
         /// Bind buttons state
-        self.swipeCardViewModel.isNameButtonEnabled.subscribe(onNext: { (isEnable) in
+        self.swipeCardViewModel.isNameButtonSelected.subscribe(onNext: { (isEnable) in
             self.nameButton.isSelected = isEnable
             self.nameButton.tintColor = isEnable ? UIColor.green : UIColor.lightGray
             if isEnable {
@@ -130,7 +157,7 @@ class SwipeCardView: SwipeableCardViewCard {
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
-        self.swipeCardViewModel.isDobButtonEnabled.subscribe(onNext: { (isEnable) in
+        self.swipeCardViewModel.isDobButtonSelected.subscribe(onNext: { (isEnable) in
             self.dobButton.isSelected = isEnable
             self.dobButton.tintColor = isEnable ? UIColor.green : UIColor.lightGray
             if isEnable {
@@ -139,7 +166,7 @@ class SwipeCardView: SwipeableCardViewCard {
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
-        self.swipeCardViewModel.isAddressButtonEnabled.subscribe(onNext: { (isEnable) in
+        self.swipeCardViewModel.isAddressButtonSelected.subscribe(onNext: { (isEnable) in
             self.addressButton.isSelected = isEnable
             self.addressButton.tintColor = isEnable ? UIColor.green : UIColor.lightGray
             if isEnable {
@@ -148,7 +175,7 @@ class SwipeCardView: SwipeableCardViewCard {
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
-        self.swipeCardViewModel.isPhoneButtonEnabled.subscribe(onNext: { (isEnable) in
+        self.swipeCardViewModel.isPhoneButtonSelected.subscribe(onNext: { (isEnable) in
             self.phoneButton.isSelected = isEnable
             self.phoneButton.tintColor = isEnable ? UIColor.green : UIColor.lightGray
             if isEnable {
@@ -157,7 +184,7 @@ class SwipeCardView: SwipeableCardViewCard {
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
-        self.swipeCardViewModel.isPasswordButtonEnabled.subscribe(onNext: { (isEnable) in
+        self.swipeCardViewModel.isPasswordButtonSelected.subscribe(onNext: { (isEnable) in
             self.passwordButton.isSelected = isEnable
             self.passwordButton.tintColor = isEnable ? UIColor.green : UIColor.lightGray
             if isEnable {
@@ -166,32 +193,5 @@ class SwipeCardView: SwipeableCardViewCard {
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
 
-    }
-    
-    // MARK: - SHADOW
-    
-    private func configureShadow() {
-        // Shadow View
-        self.shadowView?.removeFromSuperview()
-        let shadowView = UIView(frame: CGRect(x: SwipeCardView.kInnerMargin,
-                                              y: SwipeCardView.kInnerMargin,
-                                              width: bounds.width - (2 * SwipeCardView.kInnerMargin),
-                                              height: bounds.height - (2 * SwipeCardView.kInnerMargin)))
-        insertSubview(shadowView, at: 0)
-        self.shadowView = shadowView
-
-        self.applyShadow(width: CGFloat(0.0), height: CGFloat(0.0))
-    }
-
-    private func applyShadow(width: CGFloat, height: CGFloat) {
-        if let shadowView = shadowView {
-            let shadowPath = UIBezierPath(roundedRect: shadowView.bounds, cornerRadius: 14.0)
-            shadowView.layer.masksToBounds = false
-            shadowView.layer.shadowRadius = 8.0
-            shadowView.layer.shadowColor = UIColor.black.cgColor
-            shadowView.layer.shadowOffset = CGSize(width: width, height: height)
-            shadowView.layer.shadowOpacity = 0.15
-            shadowView.layer.shadowPath = shadowPath.cgPath
-        }
     }
 }

@@ -32,13 +32,24 @@ struct Person: Mappable {
     }
     
     func getBirthdayString() -> String! {
+        guard let birthdayString = dob?.date else {
+          return ""
+        }
 
-        let birthdayString = dob?.date
-        let index = (birthdayString?.index(birthdayString!.startIndex, offsetBy: 9))!
-        let subBirthdayStr = birthdayString![...index].description
-    
-        return subBirthdayStr
-    }
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        guard let date = dateFormatter.date(from: birthdayString) else {
+          return ""
+        }
+
+        // initially set the format based on your datepicker date / server String
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let myString = dateFormatter.string(from: date) // string purpose I add here
+      
+        return myString
+      }
+
     
     func getAddress() ->String! {
         return (location?.street?.number?.description ?? "") + " " + (location?.street?.name ?? "")

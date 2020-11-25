@@ -16,6 +16,7 @@
                 <outlet property="passwordButton" destination="Cio-bQ-ate" id="Rj7-hc-Is6"/>
                 <outlet property="phoneButton" destination="jju-OZ-8FV" id="cMs-gh-9Nk"/>
                 <outlet property="profileImageView" destination="Rme-1I-Vt2" id="Hgd-vE-6hS"/>
+                <outlet property="roundedProfileView" destination="Q3y-mC-R2U" id="PQY-3X-aLU"/>
                 <outlet property="titleLabel" destination="UGh-dd-89Z" id="KYv-hv-ICQ"/>
             </connections>
         </placeholder>
@@ -60,6 +61,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="120" id="9Gl-f4-Gcn"/>
                                 <constraint firstAttribute="trailing" secondItem="mnC-3E-No6" secondAttribute="trailing" constant="3" id="DfK-YF-YhN"/>

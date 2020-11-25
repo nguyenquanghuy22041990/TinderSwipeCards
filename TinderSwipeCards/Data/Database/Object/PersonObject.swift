@@ -8,7 +8,6 @@
 import Foundation
 
 struct PersonObject {
-
     var fullName: String
     var birthday: String
     var address: String

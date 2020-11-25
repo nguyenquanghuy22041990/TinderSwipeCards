@@ -16,6 +16,11 @@
 		1401EE2F256800C500913645 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1401EE2D256800C500913645 /* LaunchScreen.storyboard */; };
 		1401EE3A256800C500913645 /* TinderSwipeCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1401EE39256800C500913645 /* TinderSwipeCardsTests.swift */; };
 		1401EE45256800C600913645 /* TinderSwipeCardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1401EE44256800C600913645 /* TinderSwipeCardsUITests.swift */; };
+		1472A8FF256E9CA0009C8F69 /* SwipeCardViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472A8FE256E9CA0009C8F69 /* SwipeCardViewModelTest.swift */; };
+		1472AB43256EAD91009C8F69 /* RealmRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472AB42256EAD91009C8F69 /* RealmRepositoryTests.swift */; };
+		1472AB61256EB28B009C8F69 /* ShowCardsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472AB60256EB28B009C8F69 /* ShowCardsViewModelTest.swift */; };
+		1472AB67256EB3E7009C8F69 /* MockCardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472AB66256EB3E7009C8F69 /* MockCardsRepository.swift */; };
+		1472AB72256EB591009C8F69 /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472AB71256EB591009C8F69 /* MockError.swift */; };
 		14737FAD25694F23002612C2 /* SwipeCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14737FAC25694F23002612C2 /* SwipeCardView.xib */; };
 		14737FB32569506A002612C2 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FB22569506A002612C2 /* Picture.swift */; };
 		14737FCA25695B25002612C2 /* SwipeableCardViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FBC25695B25002612C2 /* SwipeableCardViewDelegate.swift */; };
@@ -31,9 +36,7 @@
 		14737FD425695B25002612C2 /* SwipeableCardViewCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14737FC825695B25002612C2 /* SwipeableCardViewCard.xib */; };
 		14737FD525695B25002612C2 /* SwipeableCardViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FC925695B25002612C2 /* SwipeableCardViewDataSource.swift */; };
 		14737FDA25695B5F002612C2 /* SwipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FD925695B5F002612C2 /* SwipeCardView.swift */; };
-		14737FDF25695B8E002612C2 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14737FDE25695B8E002612C2 /* CoreMotion.framework */; };
 		14737FFC25696089002612C2 /* SwipeCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FFB25696089002612C2 /* SwipeCardViewModel.swift */; };
-		14737FFD25696089002612C2 /* SwipeCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FFB25696089002612C2 /* SwipeCardViewModel.swift */; };
 		1474A0F62568BEE50000FB24 /* CardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A0F52568BEE50000FB24 /* CardsRepository.swift */; };
 		1474A18B2568CDDD0000FB24 /* Dob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A1812568CDDD0000FB24 /* Dob.swift */; };
 		1474A18C2568CDDD0000FB24 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A1832568CDDD0000FB24 /* Location.swift */; };
@@ -43,35 +46,26 @@
 		1474A1902568CDDD0000FB24 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A18A2568CDDD0000FB24 /* Name.swift */; };
 		1474A1992568CE430000FB24 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A1982568CE430000FB24 /* Login.swift */; };
 		1474A1AB2568CEC10000FB24 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A1AA2568CEC10000FB24 /* Person.swift */; };
-		1474A1B12568D0160000FB24 /* registered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A1B02568D0160000FB24 /* registered.swift */; };
+		1474A1B12568D0160000FB24 /* Registered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A1B02568D0160000FB24 /* Registered.swift */; };
 		1474A1BA2568D43B0000FB24 /* GetCardsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A1B92568D43B0000FB24 /* GetCardsResult.swift */; };
 		1474A1C02568D4970000FB24 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A1BF2568D4970000FB24 /* APIEndpoints.swift */; };
 		14D64A26256CB4B600993066 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A25256CB4B600993066 /* Repository.swift */; };
 		14D64A33256CFC7F00993066 /* AnyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A32256CFC7F00993066 /* AnyRepository.swift */; };
 		14D64A63256D094E00993066 /* PersonObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A62256D094E00993066 /* PersonObject.swift */; };
-		14D64A6A256D095300993066 /* PersonObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A62256D094E00993066 /* PersonObject.swift */; };
 		14D64A73256D3D8100993066 /* OnlineCardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A72256D3D8100993066 /* OnlineCardsRepository.swift */; };
-		14D64AAB256D3EED00993066 /* CardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A0F52568BEE50000FB24 /* CardsRepository.swift */; };
-		14D64AAC256D3EF100993066 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A1AA2568CEC10000FB24 /* Person.swift */; };
 		14D64AB7256D3F7800993066 /* GetOnlineCardsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64AB6256D3F7800993066 /* GetOnlineCardsUseCase.swift */; };
 		14D64ABC256D40E900993066 /* ShowCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64ABB256D40E900993066 /* ShowCardsViewModel.swift */; };
 		14D64AC1256D421900993066 /* SaveCardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64AC0256D421900993066 /* SaveCardUseCase.swift */; };
 		14D64AE0256D56CD00993066 /* AlertWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64ADF256D56CD00993066 /* AlertWrapper.swift */; };
 		14D64B22256D662F00993066 /* FavoriteCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64B21256D662F00993066 /* FavoriteCardsViewController.swift */; };
-		14D64B23256D662F00993066 /* FavoriteCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64B21256D662F00993066 /* FavoriteCardsViewController.swift */; };
 		14D64B28256D682500993066 /* FavoritePersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64B27256D682500993066 /* FavoritePersonTableViewCell.swift */; };
-		14D64B29256D682500993066 /* FavoritePersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64B27256D682500993066 /* FavoritePersonTableViewCell.swift */; };
 		14D64B2E256D6B0E00993066 /* LocalFavoriteCardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64B2D256D6B0E00993066 /* LocalFavoriteCardsRepository.swift */; };
-		14D64B2F256D6B0E00993066 /* LocalFavoriteCardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64B2D256D6B0E00993066 /* LocalFavoriteCardsRepository.swift */; };
 		14D64B63256D71A600993066 /* GetLocalFavoriteCardsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64B62256D71A600993066 /* GetLocalFavoriteCardsUseCase.swift */; };
-		14D64B64256D71A600993066 /* GetLocalFavoriteCardsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64B62256D71A600993066 /* GetLocalFavoriteCardsUseCase.swift */; };
 		14D64B89256D764300993066 /* ShowFavoriteCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64B88256D764300993066 /* ShowFavoriteCardsViewModel.swift */; };
-		14D64B8A256D764300993066 /* ShowFavoriteCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64B88256D764300993066 /* ShowFavoriteCardsViewModel.swift */; };
 		14D64B8F256D768F00993066 /* FavoriteCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64B8E256D768F00993066 /* FavoriteCardViewModel.swift */; };
-		14D64B90256D768F00993066 /* FavoriteCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64B8E256D768F00993066 /* FavoriteCardViewModel.swift */; };
 		14E28223256A10600089A571 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E28222256A10600089A571 /* PersonModel.swift */; };
-		14E28224256A10600089A571 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E28222256A10600089A571 /* PersonModel.swift */; };
 		62B32F2A3998E8BF0AE2D9B1 /* Pods_TinderSwipeCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB94F6CEC333FA26EA633F9 /* Pods_TinderSwipeCards.framework */; };
+		6DD1DEAB8195CD25689B33CD /* Pods_TinderSwipeCardsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7275CF0874EFB67F43ECC9 /* Pods_TinderSwipeCardsUITests.framework */; };
 		A2679FE3913A8C48B0E208B7 /* Pods_TinderSwipeCardsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF93DEFD8EA9403CC9E11D75 /* Pods_TinderSwipeCardsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +102,12 @@
 		1401EE40256800C600913645 /* TinderSwipeCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinderSwipeCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1401EE44256800C600913645 /* TinderSwipeCardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderSwipeCardsUITests.swift; sourceTree = "<group>"; };
 		1401EE46256800C600913645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1472A8F2256E99B1009C8F69 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1472A8FE256E9CA0009C8F69 /* SwipeCardViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCardViewModelTest.swift; sourceTree = "<group>"; };
+		1472AB42256EAD91009C8F69 /* RealmRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepositoryTests.swift; sourceTree = "<group>"; };
+		1472AB60256EB28B009C8F69 /* ShowCardsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCardsViewModelTest.swift; sourceTree = "<group>"; };
+		1472AB66256EB3E7009C8F69 /* MockCardsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCardsRepository.swift; sourceTree = "<group>"; };
+		1472AB71256EB591009C8F69 /* MockError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
 		14737FAC25694F23002612C2 /* SwipeCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipeCardView.xib; sourceTree = "<group>"; };
 		14737FB22569506A002612C2 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		14737FBC25695B25002612C2 /* SwipeableCardViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeableCardViewDelegate.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		1474A18A2568CDDD0000FB24 /* Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		1474A1982568CE430000FB24 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		1474A1AA2568CEC10000FB24 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		1474A1B02568D0160000FB24 /* registered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registered.swift; sourceTree = "<group>"; };
+		1474A1B02568D0160000FB24 /* Registered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registered.swift; sourceTree = "<group>"; };
 		1474A1B92568D43B0000FB24 /* GetCardsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCardsResult.swift; sourceTree = "<group>"; };
 		1474A1BF2568D4970000FB24 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		14D64A25256CB4B600993066 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -153,9 +153,12 @@
 		14D64B8E256D768F00993066 /* FavoriteCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCardViewModel.swift; sourceTree = "<group>"; };
 		14E28222256A10600089A571 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		4BB94F6CEC333FA26EA633F9 /* Pods_TinderSwipeCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinderSwipeCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A1EE159085C546CBA9383ED /* Pods-TinderSwipeCardsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderSwipeCardsUITests.debug.xcconfig"; path = "Target Support Files/Pods-TinderSwipeCardsUITests/Pods-TinderSwipeCardsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8F46984F083EAFF9F2585B07 /* Pods-TinderSwipeCardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderSwipeCardsTests.release.xcconfig"; path = "Target Support Files/Pods-TinderSwipeCardsTests/Pods-TinderSwipeCardsTests.release.xcconfig"; sourceTree = "<group>"; };
+		BC0FA81C6D50E4855782BAE0 /* Pods-TinderSwipeCardsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderSwipeCardsUITests.release.xcconfig"; path = "Target Support Files/Pods-TinderSwipeCardsUITests/Pods-TinderSwipeCardsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BE4EFDB0F80C471C980280CE /* Pods-TinderSwipeCards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderSwipeCards.debug.xcconfig"; path = "Target Support Files/Pods-TinderSwipeCards/Pods-TinderSwipeCards.debug.xcconfig"; sourceTree = "<group>"; };
 		CE8B2AE6C417195669ECEDA5 /* Pods-TinderSwipeCardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderSwipeCardsTests.debug.xcconfig"; path = "Target Support Files/Pods-TinderSwipeCardsTests/Pods-TinderSwipeCardsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CF7275CF0874EFB67F43ECC9 /* Pods_TinderSwipeCardsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinderSwipeCardsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CDF84FD39BA010ADB6F901 /* Pods-TinderSwipeCards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderSwipeCards.release.xcconfig"; path = "Target Support Files/Pods-TinderSwipeCards/Pods-TinderSwipeCards.release.xcconfig"; sourceTree = "<group>"; };
 		FF93DEFD8EA9403CC9E11D75 /* Pods_TinderSwipeCardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinderSwipeCardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -165,7 +168,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14737FDF25695B8E002612C2 /* CoreMotion.framework in Frameworks */,
 				62B32F2A3998E8BF0AE2D9B1 /* Pods_TinderSwipeCards.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,6 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DD1DEAB8195CD25689B33CD /* Pods_TinderSwipeCardsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +235,9 @@
 		1401EE38256800C500913645 /* TinderSwipeCardsTests */ = {
 			isa = PBXGroup;
 			children = (
+				1472AB65256EB3BA009C8F69 /* Mock */,
+				1472AB41256EAD6F009C8F69 /* Database */,
+				1472A8FD256E9C77009C8F69 /* ViewModelsTest */,
 				1401EE39256800C500913645 /* TinderSwipeCardsTests.swift */,
 				1401EE3B256800C500913645 /* Info.plist */,
 			);
@@ -245,6 +251,39 @@
 				1401EE46256800C600913645 /* Info.plist */,
 			);
 			path = TinderSwipeCardsUITests;
+			sourceTree = "<group>";
+		};
+		1472A8E9256E9978009C8F69 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		1472A8FD256E9C77009C8F69 /* ViewModelsTest */ = {
+			isa = PBXGroup;
+			children = (
+				1472A8FE256E9CA0009C8F69 /* SwipeCardViewModelTest.swift */,
+				1472AB60256EB28B009C8F69 /* ShowCardsViewModelTest.swift */,
+			);
+			path = ViewModelsTest;
+			sourceTree = "<group>";
+		};
+		1472AB41256EAD6F009C8F69 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				1472AB42256EAD91009C8F69 /* RealmRepositoryTests.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		1472AB65256EB3BA009C8F69 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				1472AB66256EB3E7009C8F69 /* MockCardsRepository.swift */,
+				1472AB71256EB591009C8F69 /* MockError.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		14737FAB25694F0E002612C2 /* View */ = {
@@ -270,6 +309,7 @@
 		14737FBA25695B12002612C2 /* ThirdParties */ = {
 			isa = PBXGroup;
 			children = (
+				1472A8E9256E9978009C8F69 /* Reachability */,
 				14737FBB25695B25002612C2 /* SwipeableView */,
 			);
 			path = ThirdParties;
@@ -447,7 +487,7 @@
 		1474A1AF2568D0000000FB24 /* Registered */ = {
 			isa = PBXGroup;
 			children = (
-				1474A1B02568D0160000FB24 /* registered.swift */,
+				1474A1B02568D0160000FB24 /* Registered.swift */,
 			);
 			path = Registered;
 			sourceTree = "<group>";
@@ -521,9 +561,11 @@
 		ACB2904ADAA619E96F893865 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1472A8F2256E99B1009C8F69 /* SystemConfiguration.framework */,
 				14737FDE25695B8E002612C2 /* CoreMotion.framework */,
 				4BB94F6CEC333FA26EA633F9 /* Pods_TinderSwipeCards.framework */,
 				FF93DEFD8EA9403CC9E11D75 /* Pods_TinderSwipeCardsTests.framework */,
+				CF7275CF0874EFB67F43ECC9 /* Pods_TinderSwipeCardsUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -535,6 +577,8 @@
 				E2CDF84FD39BA010ADB6F901 /* Pods-TinderSwipeCards.release.xcconfig */,
 				CE8B2AE6C417195669ECEDA5 /* Pods-TinderSwipeCardsTests.debug.xcconfig */,
 				8F46984F083EAFF9F2585B07 /* Pods-TinderSwipeCardsTests.release.xcconfig */,
+				5A1EE159085C546CBA9383ED /* Pods-TinderSwipeCardsUITests.debug.xcconfig */,
+				BC0FA81C6D50E4855782BAE0 /* Pods-TinderSwipeCardsUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -585,9 +629,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1401EE4F256800C600913645 /* Build configuration list for PBXNativeTarget "TinderSwipeCardsUITests" */;
 			buildPhases = (
+				2D58B3BE078E5B9AAFF16048 /* [CP] Check Pods Manifest.lock */,
 				1401EE3C256800C600913645 /* Sources */,
 				1401EE3D256800C600913645 /* Frameworks */,
 				1401EE3E256800C600913645 /* Resources */,
+				B1E97C9663581AE15D4E9B78 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -671,6 +717,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2D58B3BE078E5B9AAFF16048 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TinderSwipeCardsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3554337F34072216BA8945A0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -727,6 +795,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TinderSwipeCardsTests/Pods-TinderSwipeCardsTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B1E97C9663581AE15D4E9B78 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TinderSwipeCardsUITests/Pods-TinderSwipeCardsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TinderSwipeCardsUITests/Pods-TinderSwipeCardsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TinderSwipeCardsUITests/Pods-TinderSwipeCardsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		ECFC59C06B4849D4E7535195 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -761,7 +846,7 @@
 				14737FFC25696089002612C2 /* SwipeCardViewModel.swift in Sources */,
 				14D64B2E256D6B0E00993066 /* LocalFavoriteCardsRepository.swift in Sources */,
 				1474A1992568CE430000FB24 /* Login.swift in Sources */,
-				1474A1B12568D0160000FB24 /* registered.swift in Sources */,
+				1474A1B12568D0160000FB24 /* Registered.swift in Sources */,
 				14D64A73256D3D8100993066 /* OnlineCardsRepository.swift in Sources */,
 				14737FCA25695B25002612C2 /* SwipeableCardViewDelegate.swift in Sources */,
 				14D64A26256CB4B600993066 /* Repository.swift in Sources */,
@@ -808,12 +893,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14D64AAC256D3EF100993066 /* Person.swift in Sources */,
-				14737FFD25696089002612C2 /* SwipeCardViewModel.swift in Sources */,
-				14E28224256A10600089A571 /* PersonModel.swift in Sources */,
 				1401EE3A256800C500913645 /* TinderSwipeCardsTests.swift in Sources */,
-				14D64AAB256D3EED00993066 /* CardsRepository.swift in Sources */,
-				14D64A6A256D095300993066 /* PersonObject.swift in Sources */,
+				1472AB61256EB28B009C8F69 /* ShowCardsViewModelTest.swift in Sources */,
+				1472AB67256EB3E7009C8F69 /* MockCardsRepository.swift in Sources */,
+				1472A8FF256E9CA0009C8F69 /* SwipeCardViewModelTest.swift in Sources */,
+				1472AB43256EAD91009C8F69 /* RealmRepositoryTests.swift in Sources */,
+				1472AB72256EB591009C8F69 /* MockError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,13 +906,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14D64B64256D71A600993066 /* GetLocalFavoriteCardsUseCase.swift in Sources */,
-				14D64B2F256D6B0E00993066 /* LocalFavoriteCardsRepository.swift in Sources */,
-				14D64B29256D682500993066 /* FavoritePersonTableViewCell.swift in Sources */,
-				14D64B23256D662F00993066 /* FavoriteCardsViewController.swift in Sources */,
-				14D64B8A256D764300993066 /* ShowFavoriteCardsViewModel.swift in Sources */,
 				1401EE45256800C600913645 /* TinderSwipeCardsUITests.swift in Sources */,
-				14D64B90256D768F00993066 /* FavoriteCardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -997,7 +1076,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tatabim.TinderSwipeCards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1016,7 +1095,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tatabim.TinderSwipeCards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1066,6 +1145,7 @@
 		};
 		1401EE50256800C600913645 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A1EE159085C546CBA9383ED /* Pods-TinderSwipeCardsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1085,6 +1165,7 @@
 		};
 		1401EE51256800C600913645 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC0FA81C6D50E4855782BAE0 /* Pods-TinderSwipeCardsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

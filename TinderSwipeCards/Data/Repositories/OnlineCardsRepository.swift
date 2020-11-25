@@ -19,6 +19,7 @@ final class OnlineCardsRepository {
 
 extension OnlineCardsRepository: CardsRepository {
     func getListPeople(results: String!, completion: @escaping (Result<[PersonObject], Error>) -> Void) {
+        
         provider.request(GetPeople.get(results)){ (result) in
             if case .success(let response) = result {
                 do {

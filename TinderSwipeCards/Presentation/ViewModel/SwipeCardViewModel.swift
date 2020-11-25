@@ -23,7 +23,7 @@ final class SwipeCardViewModel {
     }
     
 
-    var isNameButtonEnabled: Observable<Bool> {
+    var isNameButtonSelected: Observable<Bool> {
         return Observable.combineLatest(didSelectNameButton, didSelectDobButton, didSelectAddressButton, didSelectPhoneButton, didSelectPasswordButton) {
                     if $0, !$1, !$2, !$3, !$4 {
                         return $0
@@ -32,7 +32,7 @@ final class SwipeCardViewModel {
                 }
     }
     
-    var isDobButtonEnabled: Observable<Bool> {
+    var isDobButtonSelected: Observable<Bool> {
         return Observable.combineLatest(didSelectNameButton, didSelectDobButton, didSelectAddressButton, didSelectPhoneButton, didSelectPasswordButton) {
                     if !$0, $1, !$2, !$3, !$4 {
                         return $1
@@ -41,7 +41,7 @@ final class SwipeCardViewModel {
                 }
     }
     
-    var isAddressButtonEnabled: Observable<Bool> {
+    var isAddressButtonSelected: Observable<Bool> {
         return Observable.combineLatest(didSelectNameButton, didSelectDobButton, didSelectAddressButton, didSelectPhoneButton, didSelectPasswordButton) {
                     if !$0, !$1, $2, !$3, !$4 {
                         return $2
@@ -50,7 +50,7 @@ final class SwipeCardViewModel {
                 }
     }
     
-    var isPhoneButtonEnabled: Observable<Bool> {
+    var isPhoneButtonSelected: Observable<Bool> {
         return Observable.combineLatest(didSelectNameButton, didSelectDobButton, didSelectAddressButton, didSelectPhoneButton, didSelectPasswordButton) {
                     if !$0, !$1, !$2, $3, !$4 {
                         return $3
@@ -59,7 +59,7 @@ final class SwipeCardViewModel {
                 }
     }
     
-    var isPasswordButtonEnabled: Observable<Bool> {
+    var isPasswordButtonSelected: Observable<Bool> {
         return Observable.combineLatest(didSelectNameButton, didSelectDobButton, didSelectAddressButton, didSelectPhoneButton, didSelectPasswordButton) {
                     if !$0, !$1, !$2, !$3, $4 {
                         return $4

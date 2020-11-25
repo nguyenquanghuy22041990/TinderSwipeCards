@@ -18,6 +18,7 @@ extension PersonObject: Entity {
         realmPerson.phoneNumber = phoneNumber
         realmPerson.password = password
         realmPerson.picturePath = picturePath
+        realmPerson.uuid = phoneNumber
         
         return realmPerson
     }
@@ -35,8 +36,7 @@ class PersonModel: Object, Storable {
     @objc dynamic var phoneNumber = ""
     @objc dynamic var password = ""
     @objc dynamic var picturePath = ""
-    
-    var uuid: String = UUID().uuidString
+    @objc dynamic var uuid = ""
     
     var model: PersonObject {
         get {

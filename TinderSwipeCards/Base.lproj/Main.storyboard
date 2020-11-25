@@ -20,17 +20,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="No Cards Left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLB-JN-Jr6">
-                                <rect key="frame" x="144" y="382" width="126" height="24"/>
+                                <rect key="frame" x="144" y="441" width="126" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a72-Nm-uHM" customClass="SwipeableCardViewContainer" customModule="TinderSwipeCards" customModuleProvider="target">
-                                <rect key="frame" x="25" y="144" width="364" height="500"/>
+                                <rect key="frame" x="25" y="144" width="364" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="7J1-kc-tid"/>
-                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nus-hV-n3t" userLabel="Reload Button">
                                 <rect key="frame" x="10" y="40" width="50" height="50"/>
@@ -60,6 +57,7 @@
                         <constraints>
                             <constraint firstItem="a72-Nm-uHM" firstAttribute="top" secondItem="SS0-zg-dha" secondAttribute="bottom" constant="100" id="2nP-dq-EmV"/>
                             <constraint firstItem="JLB-JN-Jr6" firstAttribute="centerY" secondItem="a72-Nm-uHM" secondAttribute="centerY" id="4UC-HC-IwK"/>
+                            <constraint firstItem="VMB-0p-CdK" firstAttribute="top" secondItem="a72-Nm-uHM" secondAttribute="bottom" constant="100" id="8EF-ag-kML"/>
                             <constraint firstItem="TWh-gm-VF4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="10" id="Dk6-VW-kyy"/>
                             <constraint firstItem="TWh-gm-VF4" firstAttribute="centerY" secondItem="Nus-hV-n3t" secondAttribute="centerY" id="FKb-vD-pKw"/>
                             <constraint firstItem="JLB-JN-Jr6" firstAttribute="centerX" secondItem="a72-Nm-uHM" secondAttribute="centerX" id="dlh-gq-gkM"/>
@@ -102,12 +100,6 @@
                                     <action selector="tapCloseButton:" destination="8Fw-PI-t6f" eventType="touchUpInside" id="8oQ-sk-ro8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Favorite Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ono-R1-cpG">
-                                <rect key="frame" x="125.5" y="434" width="163" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="180" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4i-xe-Myf">
                                 <rect key="frame" x="0.0" y="50" width="414" height="792"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -174,9 +166,7 @@
                         <constraints>
                             <constraint firstItem="Q4i-xe-Myf" firstAttribute="leading" secondItem="Afj-dt-Cb4" secondAttribute="leading" id="4EQ-t4-YZV"/>
                             <constraint firstAttribute="bottom" secondItem="Q4i-xe-Myf" secondAttribute="bottom" id="A2i-kY-pme"/>
-                            <constraint firstItem="Ono-R1-cpG" firstAttribute="centerY" secondItem="Q4i-xe-Myf" secondAttribute="centerY" id="N8A-01-GQi"/>
                             <constraint firstItem="6nI-xR-LJl" firstAttribute="top" secondItem="wS4-d5-5vJ" secondAttribute="bottom" id="TGa-lJ-BoT"/>
-                            <constraint firstItem="Ono-R1-cpG" firstAttribute="centerX" secondItem="Q4i-xe-Myf" secondAttribute="centerX" id="dBk-pJ-FJQ"/>
                             <constraint firstAttribute="trailing" secondItem="Q4i-xe-Myf" secondAttribute="trailing" id="nia-4e-cp0"/>
                             <constraint firstItem="Q4i-xe-Myf" firstAttribute="top" secondItem="wS4-d5-5vJ" secondAttribute="bottom" constant="50" id="rsW-kk-NPS"/>
                             <constraint firstAttribute="trailing" secondItem="6nI-xR-LJl" secondAttribute="trailing" constant="10" id="xl2-Ib-VU6"/>

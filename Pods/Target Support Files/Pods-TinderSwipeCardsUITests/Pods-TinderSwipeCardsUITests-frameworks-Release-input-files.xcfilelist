@@ -1,4 +1,4 @@
-${PODS_ROOT}/Target Support Files/Pods-TinderSwipeCards/Pods-TinderSwipeCards-frameworks.sh
+${PODS_ROOT}/Target Support Files/Pods-TinderSwipeCardsUITests/Pods-TinderSwipeCardsUITests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
 ${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework
@@ -13,3 +13,5 @@ ${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
 ${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework
 ${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework
 ${BUILT_PRODUCTS_DIR}/pop/pop.framework
+${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework
+${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework

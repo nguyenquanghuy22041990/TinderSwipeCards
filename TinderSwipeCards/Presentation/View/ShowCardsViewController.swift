@@ -35,28 +35,25 @@ class ShowCardsViewController: UIViewController {
     }
     
     func setUpBinding() {
-        showCardsViewModel.swipeCardViewModelList.drive(onNext: { [unowned self](_) in
+        self.showCardsViewModel.swipeCardViewModelList.subscribe(onNext: { (_) in
             self.swipeableCardView.reloadData()
-        }, onCompleted: nil, onDisposed: nil)
-        .disposed(by: disposeBag)
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
-        showCardsViewModel.info.drive(onNext: { [unowned self](infoString) in
+        self.showCardsViewModel.info.subscribe(onNext: { [unowned self](infoString) in
             if (infoString != "") {
                 let errorAlertController = AlertWrapper.getErrorAlertController(message: infoString)
                 self.present(errorAlertController, animated: true, completion: nil)
             }
-        }, onCompleted: nil, onDisposed: nil)
-        .disposed(by: disposeBag)
-        
-        showCardsViewModel.isFetching.drive(onNext: { (isFetching) in
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+
+        self.showCardsViewModel.isFetching.subscribe(onNext: { (isFetching) in
             if (isFetching) {
                 ProgressHUD.show("Get cards...")
             } else {
                 ProgressHUD.dismiss()
             }
-        }, onCompleted: nil, onDisposed: nil)
-        .disposed(by: disposeBag)
-        
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+
         reloadButton.rx.tap.asDriver().drive(onNext: { [unowned self](_) in
             self.showCardsViewModel.getCards()
         }, onCompleted: nil, onDisposed: nil)
@@ -91,7 +88,7 @@ extension ShowCardsViewController : SwipeableCardViewDelegate {
         print("Swiped Card \(index) to the \(direction)")
         
         if (direction == .right || direction == .bottomRight || direction == .topRight) {
-            showCardsViewModel.saveCard(personObject: showCardsViewModel.viewModelForCard(at: index)!.personObject)
+            _ = showCardsViewModel.saveCard(personObject: showCardsViewModel.viewModelForCard(at: index)!.personObject)
         }
     }
     

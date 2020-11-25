@@ -26,20 +26,18 @@ class FavoriteCardsViewController: UIViewController {
         
     }
     
-    func setUpBinding() {
-        showFavoriteCardsViewModel.favoriteCardViewModelList.drive(onNext: { [unowned self](_) in
+    func setUpBinding() {        
+        self.showFavoriteCardsViewModel.favoriteCardViewModelList.subscribe(onNext: { (_) in
             self.tableView.reloadData()
-        }, onCompleted: nil, onDisposed: nil)
-        .disposed(by: disposeBag)
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
-        showFavoriteCardsViewModel.isFetching.drive(onNext: { (isFetching) in
+        self.showFavoriteCardsViewModel.isFetching.subscribe(onNext: { (isFetching) in
             if (isFetching) {
                 ProgressHUD.show("Get cards...")
             } else {
                 ProgressHUD.dismiss()
             }
-        }, onCompleted: nil, onDisposed: nil)
-        .disposed(by: disposeBag)
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
     }
 

@@ -253,13 +253,6 @@
 			path = TinderSwipeCardsUITests;
 			sourceTree = "<group>";
 		};
-		1472A8E9256E9978009C8F69 /* Reachability */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Reachability;
-			sourceTree = "<group>";
-		};
 		1472A8FD256E9C77009C8F69 /* ViewModelsTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,7 +302,6 @@
 		14737FBA25695B12002612C2 /* ThirdParties */ = {
 			isa = PBXGroup;
 			children = (
-				1472A8E9256E9978009C8F69 /* Reachability */,
 				14737FBB25695B25002612C2 /* SwipeableView */,
 			);
 			path = ThirdParties;

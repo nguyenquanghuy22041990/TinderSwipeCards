@@ -7,22 +7,24 @@
 
 import Foundation
 
+@testable import TinderSwipeCards
 final class MockCardsRepository: CardsRepository {
     
-    var mockPersonObjectList: [PersonObject]!
-    var isSuccessful: Bool!
-    var errorMessage: String! = ""
+    public var mockPersonObjectList: [PersonObject]! = []
+    public var didCallApiSuccessfully: Bool! = true
+    public var didSaveCardSuccessfully: Bool! = true
+    public var errorMessage: String! = "An error occurred"
     
     func getListPeople(results: String!,
                        completion:@escaping (Result<[PersonObject], Error>) ->Void) {
-        if isSuccessful {
-            completion(.success(peopleObjects))
+        if didCallApiSuccessfully {
+            completion(.success(mockPersonObjectList))
         } else {
             completion(.failure(MockError.first(message: errorMessage)))
         }
     }
     
     func saveCardRepository(card: PersonObject) -> Bool! {
-        return true
+        return didSaveCardSuccessfully
     }
 }

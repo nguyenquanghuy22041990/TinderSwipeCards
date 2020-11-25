@@ -17,7 +17,6 @@ end
 
 target 'TinderSwipeCards' do
   common_pods_for_target
-  pod 'RealmSwift'
 end
 
 # RxTest and RxBlocking make the most sense in the context of unit/integration tests

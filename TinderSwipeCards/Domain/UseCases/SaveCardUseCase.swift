@@ -12,9 +12,9 @@ protocol SaveCardUseCase {
 }
 
 final class DefaultSaveCardUseCase: SaveCardUseCase {
-    private let localFavoriteCardsRepository: LocalFavoriteCardsRepository
+    private let localFavoriteCardsRepository: CardsRepository
     
-    init(localFavoriteCardsRepository: LocalFavoriteCardsRepository) {
+    init(localFavoriteCardsRepository: CardsRepository) {
         self.localFavoriteCardsRepository = localFavoriteCardsRepository
     }
     

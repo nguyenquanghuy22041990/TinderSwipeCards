@@ -21,7 +21,7 @@ final class ShowFavoriteCardsViewModel {
         self.getCardsUseCase = getCardsUseCase
         self.disposeBag = disposeBag
         
-        getCard()
+        getFavoriteCards()
     }
     
     var numberOfFavoriteCards: Int {
@@ -36,7 +36,7 @@ final class ShowFavoriteCardsViewModel {
         return FavoriteCardViewModel(personObject: favoriteCardViewModelList.value[index].personObject)
     }
     
-    func getCard() {
+    func getFavoriteCards() {
         self.isFetching.accept(true)
         getCardsUseCase.excute(result: "50") { (result) in
             

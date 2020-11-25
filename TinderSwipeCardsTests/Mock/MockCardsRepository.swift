@@ -11,13 +11,13 @@ import Foundation
 final class MockCardsRepository: CardsRepository {
     
     public var mockPersonObjectList: [PersonObject]! = []
-    public var didCallApiSuccessfully: Bool! = true
+    public var didGetListCardsSuccessfully: Bool! = true
     public var didSaveCardSuccessfully: Bool! = true
     public var errorMessage: String! = "An error occurred"
     
     func getListPeople(results: String!,
                        completion:@escaping (Result<[PersonObject], Error>) ->Void) {
-        if didCallApiSuccessfully {
+        if didGetListCardsSuccessfully {
             completion(.success(mockPersonObjectList))
         } else {
             completion(.failure(MockError.first(message: errorMessage)))

@@ -49,6 +49,7 @@
 		1474A1B12568D0160000FB24 /* Registered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A1B02568D0160000FB24 /* Registered.swift */; };
 		1474A1BA2568D43B0000FB24 /* GetCardsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A1B92568D43B0000FB24 /* GetCardsResult.swift */; };
 		1474A1C02568D4970000FB24 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A1BF2568D4970000FB24 /* APIEndpoints.swift */; };
+		14763683256EC9EB004D274C /* ShowFavoriteCardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14763682256EC9EB004D274C /* ShowFavoriteCardUseCase.swift */; };
 		14D64A26256CB4B600993066 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A25256CB4B600993066 /* Repository.swift */; };
 		14D64A33256CFC7F00993066 /* AnyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A32256CFC7F00993066 /* AnyRepository.swift */; };
 		14D64A63256D094E00993066 /* PersonObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A62256D094E00993066 /* PersonObject.swift */; };
@@ -137,6 +138,7 @@
 		1474A1B02568D0160000FB24 /* Registered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registered.swift; sourceTree = "<group>"; };
 		1474A1B92568D43B0000FB24 /* GetCardsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCardsResult.swift; sourceTree = "<group>"; };
 		1474A1BF2568D4970000FB24 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		14763682256EC9EB004D274C /* ShowFavoriteCardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFavoriteCardUseCase.swift; sourceTree = "<group>"; };
 		14D64A25256CB4B600993066 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		14D64A32256CFC7F00993066 /* AnyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyRepository.swift; sourceTree = "<group>"; };
 		14D64A62256D094E00993066 /* PersonObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonObject.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			children = (
 				1472A8FE256E9CA0009C8F69 /* SwipeCardViewModelTest.swift */,
 				1472AB60256EB28B009C8F69 /* ShowCardsViewModelTest.swift */,
+				14763682256EC9EB004D274C /* ShowFavoriteCardUseCase.swift */,
 			);
 			path = ViewModelsTest;
 			sourceTree = "<group>";
@@ -886,6 +889,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1401EE3A256800C500913645 /* TinderSwipeCardsTests.swift in Sources */,
+				14763683256EC9EB004D274C /* ShowFavoriteCardUseCase.swift in Sources */,
 				1472AB61256EB28B009C8F69 /* ShowCardsViewModelTest.swift in Sources */,
 				1472AB67256EB3E7009C8F69 /* MockCardsRepository.swift in Sources */,
 				1472A8FF256E9CA0009C8F69 /* SwipeCardViewModelTest.swift in Sources */,

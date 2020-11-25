@@ -22,8 +22,6 @@ class FavoriteCardsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         showFavoriteCardsViewModel = ShowFavoriteCardsViewModel(getCardsUseCase: getCardsUseCase, disposeBag: disposeBag)
-        
-        
     }
     
     func setUpBinding() {        

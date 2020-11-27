@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import Swinject
-import SwinjectStoryboard
 import RxSwift
 import Moya
 import Moya_ModelMapper
@@ -16,11 +14,10 @@ import Mapper
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var container: Container!
-    var onlineCardsRepository: OnlineCardsRepository = OnlineCardsRepository(provider: MoyaProvider<GetPeople>(), checkNetworkManager: ReachabilityCheckNetworkManager())
-    var localFavoriteCardsRepository: LocalFavoriteCardsRepository = LocalFavoriteCardsRepository(personRepository:  AnyRepository<PersonObject>())
-    
 
+    var onlineCardsRepository: OnlineCardsRepository = OnlineCardsRepository(provider: MoyaProvider<GetPeople>(), checkNetworkManager: ReachabilityCheckNetworkManager())
+    var localFavoriteCardsRepository: LocalFavoriteCardsRepository = LocalFavoriteCardsRepository(personRepository:  GeneralRepository.sharedInstance.personRepository)
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -63,30 +60,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func injectDependencies() {
-        container = Container()
+        let showCardsViewController: ShowCardsViewController = window?.rootViewController as! ShowCardsViewController
         
-        container.register(GetOnlineCardsUseCase.self) { _ in DefaultGetOnlineCardsUseCase(getCardsRepository: self.onlineCardsRepository)
-        }
-        
-        container.register(SaveCardUseCase.self) { _ in DefaultSaveCardUseCase(localFavoriteCardsRepository: self.localFavoriteCardsRepository)
-        }
-        
-        container.register(GetLocalFavoriteCardsUseCase.self) { _ in DefaultGetLocalFavoriteCardsUseCase(getCardsRepository: self.localFavoriteCardsRepository)
-        }
-        
-        container.storyboardInitCompleted(ShowCardsViewController.self) { resolver, showCardsController in
-            showCardsController.getCardsUseCase = resolver.resolve(GetOnlineCardsUseCase.self)
-            showCardsController.saveCardUseCase = resolver.resolve(SaveCardUseCase.self)
-        }
-        
-        container.storyboardInitCompleted(FavoriteCardsViewController.self) { resolver, favoriteCardsViewController in
-            favoriteCardsViewController.getCardsUseCase = resolver.resolve(GetLocalFavoriteCardsUseCase.self)
-        }
-        
-        let storyboard = SwinjectStoryboard.create(name: "Main", bundle: nil, container: container)
-        window?.rootViewController = storyboard.instantiateInitialViewController()
-        
+        showCardsViewController.getCardsUseCase = DefaultGetOnlineCardsUseCase(getCardsRepository: self.onlineCardsRepository)
+        showCardsViewController.saveCardUseCase = DefaultSaveCardUseCase(localFavoriteCardsRepository: localFavoriteCardsRepository)
     }
-
 }
 

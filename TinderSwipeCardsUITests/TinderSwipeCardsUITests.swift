@@ -25,6 +25,7 @@ class TinderSwipeCardsUITests: XCTestCase {
     func testExample() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
+        
         app.launch()
 
         // Use recording to get started writing UI tests.
@@ -38,5 +39,72 @@ class TinderSwipeCardsUITests: XCTestCase {
                 XCUIApplication().launch()
             }
         }
+    }
+    
+    func testFirstNameTabIsSelectedByDefault() throws {
+        let app = XCUIApplication()
+        app.launch()
+        // First tab will display "My name is"
+        XCTAssert(app.staticTexts["My name is"].exists)
+    }
+    
+    func testMyBirthdayIsDisplayedWhenTapDOBTab() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        let dobButtons = app.buttons.matching(identifier: "DOB Button")
+        
+        if dobButtons.count > 0 {
+            let firstButton = dobButtons.element(boundBy: 0)
+            firstButton.tap()
+        }
+
+        // First tab will display "My name is"
+        XCTAssert(app.staticTexts["My birthday is"].exists)
+    }
+    
+    func testMyAddressIsDisplayedWhenTapAddressTab() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        let dobButtons = app.buttons.matching(identifier: "Address Button")
+        
+        if dobButtons.count > 0 {
+            let firstButton = dobButtons.element(boundBy: 0)
+            firstButton.tap()
+        }
+
+        // First tab will display "My name is"
+        XCTAssert(app.staticTexts["My address is"].exists)
+    }
+    
+    func testMyPhoneNumberIsDisplayedWhenTapAddressTab() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        let dobButtons = app.buttons.matching(identifier: "Phone Button")
+        
+        if dobButtons.count > 0 {
+            let firstButton = dobButtons.element(boundBy: 0)
+            firstButton.tap()
+        }
+
+        // First tab will display "My name is"
+        XCTAssert(app.staticTexts["My phone number is"].exists)
+    }
+    
+    func testMyPasswordIsDisplayedWhenTapPasswordTab() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        let dobButtons = app.buttons.matching(identifier: "Password Button")
+        
+        if dobButtons.count > 0 {
+            let firstButton = dobButtons.element(boundBy: 0)
+            firstButton.tap()
+        }
+
+        // First tab will display "My name is"
+        XCTAssert(app.staticTexts["My password is"].exists)
     }
 }

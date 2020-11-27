@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import Kingfisher
 
-class SwipeCardView: SwipeableCardViewCard {
+class SwipeCardView: UIView {
 
     @IBOutlet weak var roundedProfileView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -30,28 +30,29 @@ class SwipeCardView: SwipeableCardViewCard {
     private var disposeBag: DisposeBag? = nil
     var swipeCardViewModel: SwipeCardViewModel!
     
-  private var shadowLayer: CAShapeLayer?
+      private var shadowLayer: CAShapeLayer?
 
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-    shadowLayer = createAndAddShadowLayer(background: .white, shadowWid: 20, shadowHei: 30)
-  }
-
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-
-    override func awakeFromNib() {
-        superview?.awakeFromNib()
+      override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+      }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
     }
     
+    func commonInit() {
+//        Bundle.main.loadNibNamed("SwipeCardView", owner: self, options: nil)
+//        self.addSubview(contentView)
+        shadowLayer = createAndAddShadowLayer(background: .white, shadowWid: 20, shadowHei: 30)
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
 
-//        configureShadow()
-      shadowLayer?.path = UIBezierPath(roundedRect: bounds, cornerRadius: shadowLayer?.cornerRadius ?? 5).cgPath
-      shadowLayer?.shadowPath = shadowLayer?.path
+        shadowLayer?.path = UIBezierPath(roundedRect: bounds, cornerRadius: shadowLayer?.cornerRadius ?? 5).cgPath
+        shadowLayer?.shadowPath = shadowLayer?.path
 
         roundedProfileView.layer.borderWidth = 1.0
         roundedProfileView.layer.borderColor = UIColor.gray.cgColor

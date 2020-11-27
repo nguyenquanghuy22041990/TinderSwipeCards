@@ -25,9 +25,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a72-Nm-uHM" customClass="SwipeableCardViewContainer" customModule="TinderSwipeCards" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a72-Nm-uHM" userLabel="CustomKolodaView" customClass="KolodaView" customModule="Koloda">
                                 <rect key="frame" x="25" y="144" width="364" height="618"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nus-hV-n3t" userLabel="Reload Button">
                                 <rect key="frame" x="10" y="40" width="50" height="50"/>
@@ -57,20 +57,20 @@
                         <constraints>
                             <constraint firstItem="a72-Nm-uHM" firstAttribute="top" secondItem="SS0-zg-dha" secondAttribute="bottom" constant="100" id="2nP-dq-EmV"/>
                             <constraint firstItem="JLB-JN-Jr6" firstAttribute="centerY" secondItem="a72-Nm-uHM" secondAttribute="centerY" id="4UC-HC-IwK"/>
-                            <constraint firstItem="VMB-0p-CdK" firstAttribute="top" secondItem="a72-Nm-uHM" secondAttribute="bottom" constant="100" id="8EF-ag-kML"/>
                             <constraint firstItem="TWh-gm-VF4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="10" id="Dk6-VW-kyy"/>
                             <constraint firstItem="TWh-gm-VF4" firstAttribute="centerY" secondItem="Nus-hV-n3t" secondAttribute="centerY" id="FKb-vD-pKw"/>
                             <constraint firstItem="JLB-JN-Jr6" firstAttribute="centerX" secondItem="a72-Nm-uHM" secondAttribute="centerX" id="dlh-gq-gkM"/>
                             <constraint firstItem="a72-Nm-uHM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="g9W-JH-gRA"/>
+                            <constraint firstItem="a72-Nm-uHM" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="618:896" id="ktq-7a-wKz"/>
                             <constraint firstAttribute="trailing" secondItem="a72-Nm-uHM" secondAttribute="trailing" constant="25" id="of0-SR-ICm"/>
                             <constraint firstItem="Nus-hV-n3t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="ujM-Pa-SUP"/>
                             <constraint firstItem="Nus-hV-n3t" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="40" id="xUG-fG-u4u"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="customKodaCardView" destination="a72-Nm-uHM" id="bPi-3X-Ddf"/>
                         <outlet property="heartButton" destination="TWh-gm-VF4" id="Rd4-fD-Fmo"/>
                         <outlet property="reloadButton" destination="Nus-hV-n3t" id="ro6-qL-0pf"/>
-                        <outlet property="swipeableCardView" destination="a72-Nm-uHM" id="lCL-Rk-luC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -22,18 +22,6 @@
 		1472AB72256EB591009C8F69 /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472AB71256EB591009C8F69 /* MockError.swift */; };
 		14737FAD25694F23002612C2 /* SwipeCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14737FAC25694F23002612C2 /* SwipeCardView.xib */; };
 		14737FB32569506A002612C2 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FB22569506A002612C2 /* Picture.swift */; };
-		14737FCA25695B25002612C2 /* SwipeableCardViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FBC25695B25002612C2 /* SwipeableCardViewDelegate.swift */; };
-		14737FCB25695B25002612C2 /* SwipeableCardViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FBD25695B25002612C2 /* SwipeableCardViewContainer.swift */; };
-		14737FCC25695B25002612C2 /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FBF25695B25002612C2 /* SwipeDirection.swift */; };
-		14737FCD25695B25002612C2 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FC025695B25002612C2 /* UIView+Constraints.swift */; };
-		14737FCE25695B25002612C2 /* CGPoint+SwipeableAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FC125695B25002612C2 /* CGPoint+SwipeableAdditions.swift */; };
-		14737FCF25695B25002612C2 /* CGRect+SwipeAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FC225695B25002612C2 /* CGRect+SwipeAdditions.swift */; };
-		14737FD025695B25002612C2 /* SwipeableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FC425695B25002612C2 /* SwipeableViewDelegate.swift */; };
-		14737FD125695B25002612C2 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FC525695B25002612C2 /* NibView.swift */; };
-		14737FD225695B25002612C2 /* SwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FC625695B25002612C2 /* SwipeableView.swift */; };
-		14737FD325695B25002612C2 /* SwipeableCardViewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FC725695B25002612C2 /* SwipeableCardViewCard.swift */; };
-		14737FD425695B25002612C2 /* SwipeableCardViewCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14737FC825695B25002612C2 /* SwipeableCardViewCard.xib */; };
-		14737FD525695B25002612C2 /* SwipeableCardViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FC925695B25002612C2 /* SwipeableCardViewDataSource.swift */; };
 		14737FDA25695B5F002612C2 /* SwipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FD925695B5F002612C2 /* SwipeCardView.swift */; };
 		14737FFC25696089002612C2 /* SwipeCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14737FFB25696089002612C2 /* SwipeCardViewModel.swift */; };
 		1474A0F62568BEE50000FB24 /* CardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A0F52568BEE50000FB24 /* CardsRepository.swift */; };
@@ -49,6 +37,8 @@
 		1474A1BA2568D43B0000FB24 /* GetCardsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A1B92568D43B0000FB24 /* GetCardsResult.swift */; };
 		1474A1C02568D4970000FB24 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A1BF2568D4970000FB24 /* APIEndpoints.swift */; };
 		14763683256EC9EB004D274C /* ShowFavoriteCardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14763682256EC9EB004D274C /* ShowFavoriteCardUseCase.swift */; };
+		14C573122571464F008AB656 /* GeneralRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C573112571464F008AB656 /* GeneralRepository.swift */; };
+		14C5739125716693008AB656 /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5739025716693008AB656 /* CustomKolodaView.swift */; };
 		14D64A26256CB4B600993066 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A25256CB4B600993066 /* Repository.swift */; };
 		14D64A33256CFC7F00993066 /* AnyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A32256CFC7F00993066 /* AnyRepository.swift */; };
 		14D64A63256D094E00993066 /* PersonObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A62256D094E00993066 /* PersonObject.swift */; };
@@ -110,18 +100,6 @@
 		1472AB71256EB591009C8F69 /* MockError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
 		14737FAC25694F23002612C2 /* SwipeCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipeCardView.xib; sourceTree = "<group>"; };
 		14737FB22569506A002612C2 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
-		14737FBC25695B25002612C2 /* SwipeableCardViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeableCardViewDelegate.swift; sourceTree = "<group>"; };
-		14737FBD25695B25002612C2 /* SwipeableCardViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeableCardViewContainer.swift; sourceTree = "<group>"; };
-		14737FBF25695B25002612C2 /* SwipeDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
-		14737FC025695B25002612C2 /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
-		14737FC125695B25002612C2 /* CGPoint+SwipeableAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+SwipeableAdditions.swift"; sourceTree = "<group>"; };
-		14737FC225695B25002612C2 /* CGRect+SwipeAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+SwipeAdditions.swift"; sourceTree = "<group>"; };
-		14737FC425695B25002612C2 /* SwipeableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeableViewDelegate.swift; sourceTree = "<group>"; };
-		14737FC525695B25002612C2 /* NibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
-		14737FC625695B25002612C2 /* SwipeableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeableView.swift; sourceTree = "<group>"; };
-		14737FC725695B25002612C2 /* SwipeableCardViewCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeableCardViewCard.swift; sourceTree = "<group>"; };
-		14737FC825695B25002612C2 /* SwipeableCardViewCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwipeableCardViewCard.xib; sourceTree = "<group>"; };
-		14737FC925695B25002612C2 /* SwipeableCardViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeableCardViewDataSource.swift; sourceTree = "<group>"; };
 		14737FD925695B5F002612C2 /* SwipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCardView.swift; sourceTree = "<group>"; };
 		14737FDE25695B8E002612C2 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		14737FFB25696089002612C2 /* SwipeCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCardViewModel.swift; sourceTree = "<group>"; };
@@ -138,6 +116,8 @@
 		1474A1B92568D43B0000FB24 /* GetCardsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCardsResult.swift; sourceTree = "<group>"; };
 		1474A1BF2568D4970000FB24 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		14763682256EC9EB004D274C /* ShowFavoriteCardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFavoriteCardUseCase.swift; sourceTree = "<group>"; };
+		14C573112571464F008AB656 /* GeneralRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRepository.swift; sourceTree = "<group>"; };
+		14C5739025716693008AB656 /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
 		14D64A25256CB4B600993066 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		14D64A32256CFC7F00993066 /* AnyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyRepository.swift; sourceTree = "<group>"; };
 		14D64A62256D094E00993066 /* PersonObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonObject.swift; sourceTree = "<group>"; };
@@ -304,45 +284,10 @@
 		14737FBA25695B12002612C2 /* ThirdParties */ = {
 			isa = PBXGroup;
 			children = (
+				14C5739025716693008AB656 /* CustomKolodaView.swift */,
 				14E8208B256FFA18001698FF /* CheckNetwork */,
-				14737FBB25695B25002612C2 /* SwipeableView */,
 			);
 			path = ThirdParties;
-			sourceTree = "<group>";
-		};
-		14737FBB25695B25002612C2 /* SwipeableView */ = {
-			isa = PBXGroup;
-			children = (
-				14737FBC25695B25002612C2 /* SwipeableCardViewDelegate.swift */,
-				14737FBD25695B25002612C2 /* SwipeableCardViewContainer.swift */,
-				14737FBE25695B25002612C2 /* Utils */,
-				14737FC325695B25002612C2 /* SwipeableCard */,
-				14737FC925695B25002612C2 /* SwipeableCardViewDataSource.swift */,
-			);
-			path = SwipeableView;
-			sourceTree = "<group>";
-		};
-		14737FBE25695B25002612C2 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				14737FBF25695B25002612C2 /* SwipeDirection.swift */,
-				14737FC025695B25002612C2 /* UIView+Constraints.swift */,
-				14737FC125695B25002612C2 /* CGPoint+SwipeableAdditions.swift */,
-				14737FC225695B25002612C2 /* CGRect+SwipeAdditions.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		14737FC325695B25002612C2 /* SwipeableCard */ = {
-			isa = PBXGroup;
-			children = (
-				14737FC425695B25002612C2 /* SwipeableViewDelegate.swift */,
-				14737FC525695B25002612C2 /* NibView.swift */,
-				14737FC625695B25002612C2 /* SwipeableView.swift */,
-				14737FC725695B25002612C2 /* SwipeableCardViewCard.swift */,
-				14737FC825695B25002612C2 /* SwipeableCardViewCard.xib */,
-			);
-			path = SwipeableCard;
 			sourceTree = "<group>";
 		};
 		14737FF625696014002612C2 /* Presentation */ = {
@@ -514,6 +459,7 @@
 			children = (
 				14D64A25256CB4B600993066 /* Repository.swift */,
 				14D64A32256CFC7F00993066 /* AnyRepository.swift */,
+				14C573112571464F008AB656 /* GeneralRepository.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -695,7 +641,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14737FD425695B25002612C2 /* SwipeableCardViewCard.xib in Resources */,
 				1401EE2F256800C500913645 /* LaunchScreen.storyboard in Resources */,
 				1401EE2C256800C500913645 /* Assets.xcassets in Resources */,
 				1401EE27256800C400913645 /* Main.storyboard in Resources */,
@@ -845,30 +790,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				14D64B22256D662F00993066 /* FavoriteCardsViewController.swift in Sources */,
-				14737FD025695B25002612C2 /* SwipeableViewDelegate.swift in Sources */,
 				14737FFC25696089002612C2 /* SwipeCardViewModel.swift in Sources */,
 				14D64B2E256D6B0E00993066 /* LocalFavoriteCardsRepository.swift in Sources */,
 				1474A1992568CE430000FB24 /* Login.swift in Sources */,
 				1474A1B12568D0160000FB24 /* Registered.swift in Sources */,
 				14D64A73256D3D8100993066 /* OnlineCardsRepository.swift in Sources */,
-				14737FCA25695B25002612C2 /* SwipeableCardViewDelegate.swift in Sources */,
 				14D64A26256CB4B600993066 /* Repository.swift in Sources */,
-				14737FD125695B25002612C2 /* NibView.swift in Sources */,
 				14D64B89256D764300993066 /* ShowFavoriteCardsViewModel.swift in Sources */,
 				14737FDA25695B5F002612C2 /* SwipeCardView.swift in Sources */,
 				14D64ABC256D40E900993066 /* ShowCardsViewModel.swift in Sources */,
-				14737FCD25695B25002612C2 /* UIView+Constraints.swift in Sources */,
 				1401EE2A256800C400913645 /* TinderSwipeCards.xcdatamodeld in Sources */,
-				14737FCC25695B25002612C2 /* SwipeDirection.swift in Sources */,
-				14737FD325695B25002612C2 /* SwipeableCardViewCard.swift in Sources */,
 				14E28223256A10600089A571 /* PersonModel.swift in Sources */,
 				14D64B63256D71A600993066 /* GetLocalFavoriteCardsUseCase.swift in Sources */,
-				14737FCE25695B25002612C2 /* CGPoint+SwipeableAdditions.swift in Sources */,
 				1401EE24256800C400913645 /* ShowCardsViewController.swift in Sources */,
 				14E8208D256FFA4A001698FF /* CheckNetworkManager.swift in Sources */,
 				1401EE20256800C400913645 /* AppDelegate.swift in Sources */,
-				14737FD525695B25002612C2 /* SwipeableCardViewDataSource.swift in Sources */,
-				14737FCF25695B25002612C2 /* CGRect+SwipeAdditions.swift in Sources */,
+				14C573122571464F008AB656 /* GeneralRepository.swift in Sources */,
 				14D64AC1256D421900993066 /* SaveCardUseCase.swift in Sources */,
 				14D64AE0256D56CD00993066 /* AlertWrapper.swift in Sources */,
 				14D64B8F256D768F00993066 /* FavoriteCardViewModel.swift in Sources */,
@@ -876,16 +813,15 @@
 				1474A0F62568BEE50000FB24 /* CardsRepository.swift in Sources */,
 				1474A1BA2568D43B0000FB24 /* GetCardsResult.swift in Sources */,
 				1474A18D2568CDDD0000FB24 /* Timezone.swift in Sources */,
+				14C5739125716693008AB656 /* CustomKolodaView.swift in Sources */,
 				1401EE22256800C400913645 /* SceneDelegate.swift in Sources */,
 				1474A18E2568CDDD0000FB24 /* Coordinates.swift in Sources */,
 				14D64B28256D682500993066 /* FavoritePersonTableViewCell.swift in Sources */,
 				14D64A63256D094E00993066 /* PersonObject.swift in Sources */,
 				1474A18B2568CDDD0000FB24 /* Dob.swift in Sources */,
 				1474A1C02568D4970000FB24 /* APIEndpoints.swift in Sources */,
-				14737FD225695B25002612C2 /* SwipeableView.swift in Sources */,
 				1474A18F2568CDDD0000FB24 /* Street.swift in Sources */,
 				1474A1AB2568CEC10000FB24 /* Person.swift in Sources */,
-				14737FCB25695B25002612C2 /* SwipeableCardViewContainer.swift in Sources */,
 				1474A1902568CDDD0000FB24 /* Name.swift in Sources */,
 				14D64A33256CFC7F00993066 /* AnyRepository.swift in Sources */,
 				14737FB32569506A002612C2 /* Picture.swift in Sources */,

@@ -37,6 +37,13 @@
             BlueprintName = "TinderSwipeCards"
             ReferencedContainer = "container:TinderSwipeCards.xcodeproj">
          </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1401EE3F256800C600913645"
+            BuildableName = "TinderSwipeCardsUITests.xctest"
+            BlueprintName = "TinderSwipeCardsUITests"
+            ReferencedContainer = "container:TinderSwipeCards.xcodeproj">
+         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference

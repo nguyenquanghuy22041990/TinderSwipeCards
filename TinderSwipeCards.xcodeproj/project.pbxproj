@@ -14,7 +14,6 @@
 		1401EE2A256800C400913645 /* TinderSwipeCards.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1401EE28256800C400913645 /* TinderSwipeCards.xcdatamodeld */; };
 		1401EE2C256800C500913645 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1401EE2B256800C500913645 /* Assets.xcassets */; };
 		1401EE2F256800C500913645 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1401EE2D256800C500913645 /* LaunchScreen.storyboard */; };
-		1401EE3A256800C500913645 /* TinderSwipeCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1401EE39256800C500913645 /* TinderSwipeCardsTests.swift */; };
 		1401EE45256800C600913645 /* TinderSwipeCardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1401EE44256800C600913645 /* TinderSwipeCardsUITests.swift */; };
 		1472A8FF256E9CA0009C8F69 /* SwipeCardViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472A8FE256E9CA0009C8F69 /* SwipeCardViewModelTest.swift */; };
 		1472AB43256EAD91009C8F69 /* RealmRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472AB42256EAD91009C8F69 /* RealmRepositoryTests.swift */; };
@@ -65,6 +64,7 @@
 		14D64B89256D764300993066 /* ShowFavoriteCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64B88256D764300993066 /* ShowFavoriteCardsViewModel.swift */; };
 		14D64B8F256D768F00993066 /* FavoriteCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64B8E256D768F00993066 /* FavoriteCardViewModel.swift */; };
 		14E28223256A10600089A571 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E28222256A10600089A571 /* PersonModel.swift */; };
+		14E8208D256FFA4A001698FF /* CheckNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8208C256FFA4A001698FF /* CheckNetworkManager.swift */; };
 		62B32F2A3998E8BF0AE2D9B1 /* Pods_TinderSwipeCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB94F6CEC333FA26EA633F9 /* Pods_TinderSwipeCards.framework */; };
 		6DD1DEAB8195CD25689B33CD /* Pods_TinderSwipeCardsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7275CF0874EFB67F43ECC9 /* Pods_TinderSwipeCardsUITests.framework */; };
 		A2679FE3913A8C48B0E208B7 /* Pods_TinderSwipeCardsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF93DEFD8EA9403CC9E11D75 /* Pods_TinderSwipeCardsTests.framework */; };
@@ -98,7 +98,6 @@
 		1401EE2E256800C500913645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1401EE30256800C500913645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1401EE35256800C500913645 /* TinderSwipeCardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinderSwipeCardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1401EE39256800C500913645 /* TinderSwipeCardsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderSwipeCardsTests.swift; sourceTree = "<group>"; };
 		1401EE3B256800C500913645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1401EE40256800C600913645 /* TinderSwipeCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinderSwipeCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1401EE44256800C600913645 /* TinderSwipeCardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderSwipeCardsUITests.swift; sourceTree = "<group>"; };
@@ -154,6 +153,7 @@
 		14D64B88256D764300993066 /* ShowFavoriteCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFavoriteCardsViewModel.swift; sourceTree = "<group>"; };
 		14D64B8E256D768F00993066 /* FavoriteCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCardViewModel.swift; sourceTree = "<group>"; };
 		14E28222256A10600089A571 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
+		14E8208C256FFA4A001698FF /* CheckNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNetworkManager.swift; sourceTree = "<group>"; };
 		4BB94F6CEC333FA26EA633F9 /* Pods_TinderSwipeCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinderSwipeCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A1EE159085C546CBA9383ED /* Pods-TinderSwipeCardsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderSwipeCardsUITests.debug.xcconfig"; path = "Target Support Files/Pods-TinderSwipeCardsUITests/Pods-TinderSwipeCardsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8F46984F083EAFF9F2585B07 /* Pods-TinderSwipeCardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderSwipeCardsTests.release.xcconfig"; path = "Target Support Files/Pods-TinderSwipeCardsTests/Pods-TinderSwipeCardsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -240,7 +240,6 @@
 				1472AB65256EB3BA009C8F69 /* Mock */,
 				1472AB41256EAD6F009C8F69 /* Database */,
 				1472A8FD256E9C77009C8F69 /* ViewModelsTest */,
-				1401EE39256800C500913645 /* TinderSwipeCardsTests.swift */,
 				1401EE3B256800C500913645 /* Info.plist */,
 			);
 			path = TinderSwipeCardsTests;
@@ -305,6 +304,7 @@
 		14737FBA25695B12002612C2 /* ThirdParties */ = {
 			isa = PBXGroup;
 			children = (
+				14E8208B256FFA18001698FF /* CheckNetwork */,
 				14737FBB25695B25002612C2 /* SwipeableView */,
 			);
 			path = ThirdParties;
@@ -551,6 +551,14 @@
 				14E28222256A10600089A571 /* PersonModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		14E8208B256FFA18001698FF /* CheckNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				14E8208C256FFA4A001698FF /* CheckNetworkManager.swift */,
+			);
+			path = CheckNetwork;
 			sourceTree = "<group>";
 		};
 		ACB2904ADAA619E96F893865 /* Frameworks */ = {
@@ -857,6 +865,7 @@
 				14D64B63256D71A600993066 /* GetLocalFavoriteCardsUseCase.swift in Sources */,
 				14737FCE25695B25002612C2 /* CGPoint+SwipeableAdditions.swift in Sources */,
 				1401EE24256800C400913645 /* ShowCardsViewController.swift in Sources */,
+				14E8208D256FFA4A001698FF /* CheckNetworkManager.swift in Sources */,
 				1401EE20256800C400913645 /* AppDelegate.swift in Sources */,
 				14737FD525695B25002612C2 /* SwipeableCardViewDataSource.swift in Sources */,
 				14737FCF25695B25002612C2 /* CGRect+SwipeAdditions.swift in Sources */,
@@ -888,7 +897,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1401EE3A256800C500913645 /* TinderSwipeCardsTests.swift in Sources */,
 				14763683256EC9EB004D274C /* ShowFavoriteCardUseCase.swift in Sources */,
 				1472AB61256EB28B009C8F69 /* ShowCardsViewModelTest.swift in Sources */,
 				1472AB67256EB3E7009C8F69 /* MockCardsRepository.swift in Sources */,

@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var container: Container!
-    var onlineCardsRepository: OnlineCardsRepository = OnlineCardsRepository(provider: MoyaProvider<GetPeople>())
+    var onlineCardsRepository: OnlineCardsRepository = OnlineCardsRepository(provider: MoyaProvider<GetPeople>(), checkNetworkManager: ReachabilityCheckNetworkManager())
     var localFavoriteCardsRepository: LocalFavoriteCardsRepository = LocalFavoriteCardsRepository(personRepository:  AnyRepository<PersonObject>())
     
 

@@ -9,7 +9,4 @@ import Foundation
 
 enum MockError: Error {
     case first(message: String)
-    case second(message: String)
-
-    var localizedDescription: String { return "Some description here!" }
 }

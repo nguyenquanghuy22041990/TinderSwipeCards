@@ -44,7 +44,7 @@ class ShowFavoriteCardUseCase: XCTestCase {
     func testValuesWhenGetFavoriteCardsUnsuccessfully() throws {
         let favoriteCardViewModelListValue = showFavoriteCardsViewModel.favoriteCardViewModelList.subscribeOn(scheduler)
         
-        mockGetLocalCardRepository.didGetListCardsSuccessfully = false
+        mockGetLocalCardRepository.simulatedCase = .didGetListCardsSuccessfully
     
         showFavoriteCardsViewModel.getFavoriteCards()
         
@@ -55,7 +55,7 @@ class ShowFavoriteCardUseCase: XCTestCase {
     
     func testValueWhenGetFavoriteCardsSuccessfully() throws {
         
-        mockGetLocalCardRepository.didGetListCardsSuccessfully = true
+        mockGetLocalCardRepository.simulatedCase = .didGetListCardsSuccessfully
         
         let personObject = PersonObject(fullName: "FullName", birthday: "22/04/1990", address: "Ho Chi Minh city", phoneNumber: "9999 9999 999", password: "abc-123", picturePath: "picturePath")
         mockGetLocalCardRepository.mockPersonObjectList = [personObject]
@@ -68,7 +68,7 @@ class ShowFavoriteCardUseCase: XCTestCase {
     
     func testViewModelForCardIsNilWhenIndexIsBiggerThanTheNumberOfViewModelForCard() throws {
         
-        mockGetLocalCardRepository.didGetListCardsSuccessfully = true
+        mockGetLocalCardRepository.simulatedCase = .didGetListCardsSuccessfully
         let cardViewModel = showFavoriteCardsViewModel.viewModelForCard(at:10)
         XCTAssertTrue(cardViewModel == nil)
     }

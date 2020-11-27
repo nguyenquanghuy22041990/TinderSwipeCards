@@ -61,7 +61,7 @@ class ShowCardsViewModelTest: XCTestCase {
         let infoMessage = showCardsViewModel.info.subscribeOn(scheduler)
         let isFetching = showCardsViewModel.isFetching.subscribeOn(scheduler)
         
-        mockGetOnlineCardRepository.didGetListCardsSuccessfully = true
+        mockGetOnlineCardRepository.simulatedCase = .didGetListCardsSuccessfully
         
         let personObject = PersonObject(fullName: "FullName", birthday: "22/04/1990", address: "Ho Chi Minh city", phoneNumber: "9999 9999 999", password: "abc-123", picturePath: "picturePath")
         mockGetOnlineCardRepository.mockPersonObjectList = [personObject]
@@ -79,7 +79,7 @@ class ShowCardsViewModelTest: XCTestCase {
         let infoMessage = showCardsViewModel.info.subscribeOn(scheduler)
         let isFetching = showCardsViewModel.isFetching.subscribeOn(scheduler)
         
-        mockGetOnlineCardRepository.didGetListCardsSuccessfully = false
+        mockGetOnlineCardRepository.simulatedCase = .didGetListCardsFailed
     
         showCardsViewModel.getCards()
         
@@ -92,9 +92,27 @@ class ShowCardsViewModelTest: XCTestCase {
         XCTAssertEqual(try isFetching.toBlocking().first(), false)
     }
     
+    func testValuesWhenNetworkIsUnavailable() throws {
+        let swipeCardViewModelListValue = showCardsViewModel.swipeCardViewModelList.subscribeOn(scheduler)
+        let infoMessage = showCardsViewModel.info.subscribeOn(scheduler)
+        let isFetching = showCardsViewModel.isFetching.subscribeOn(scheduler)
+        
+        mockGetOnlineCardRepository.simulatedCase = .didTriggerNetworkErrorMessage
+    
+        showCardsViewModel.getCards()
+        
+        let cardViewModelList = try swipeCardViewModelListValue.toBlocking().first()
+        XCTAssertEqual(cardViewModelList?.count, 0)
+        XCTAssertEqual(0, showCardsViewModel.numberOfCards)
+         
+        let errorMessage = try infoMessage.toBlocking().first()
+        XCTAssertTrue(errorMessage!!.range(of: "Network error.") != nil)
+        XCTAssertEqual(try isFetching.toBlocking().first(), false)
+    }
+    
     func testViewModelForCardWhenCallApiSuccessfully() throws {
         
-        mockGetOnlineCardRepository.didGetListCardsSuccessfully = true
+        mockGetOnlineCardRepository.simulatedCase = .didGetListCardsSuccessfully
         
         let personObject = PersonObject(fullName: "FullName", birthday: "22/04/1990", address: "Ho Chi Minh city", phoneNumber: "9999 9999 999", password: "abc-123", picturePath: "picturePath")
         mockGetOnlineCardRepository.mockPersonObjectList = [personObject]
@@ -107,7 +125,7 @@ class ShowCardsViewModelTest: XCTestCase {
     
     func testViewModelForCardIsNilWhenIndexIsBiggerThanTheNumberOfViewModelForCard() throws {
         
-        mockGetOnlineCardRepository.didGetListCardsSuccessfully = true
+        mockGetOnlineCardRepository.simulatedCase = .didGetListCardsSuccessfully
         let cardViewModel = showCardsViewModel.viewModelForCard(at:10)
         XCTAssertTrue(cardViewModel == nil)
     }

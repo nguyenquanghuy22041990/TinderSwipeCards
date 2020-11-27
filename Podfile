@@ -12,6 +12,7 @@ def common_pods_for_target
   pod 'Swinject'
   pod 'SwinjectStoryboard' , :git => 'https://github.com/Swinject/SwinjectStoryboard.git', :branch => 'master'
   pod 'pop', '1.0.10'
+  pod 'ReachabilitySwift'
   pod 'RealmSwift'
 end
 
@@ -25,7 +26,7 @@ target 'TinderSwipeCardsTests' do
     pod 'RxCocoa', '~> 5'
     pod 'RxBlocking', '~> 5'
     pod 'RxTest', '~> 5'
-  
+    pod 'RealmSwift'
 end
 
 target 'TinderSwipeCardsUITests' do
@@ -33,4 +34,5 @@ target 'TinderSwipeCardsUITests' do
     pod 'RxCocoa', '~> 5'
     pod 'RxBlocking', '~> 5'
     pod 'RxTest', '~> 5'
+    pod 'SwinjectStoryboard' , :git => 'https://github.com/Swinject/SwinjectStoryboard.git', :branch => 'master'
 end

@@ -51,7 +51,14 @@ final class ShowCardsViewModel {
             
             case .failure(let error):
                 self.swipeCardViewModelList.accept([])
-                self.info.accept("There was something wrong with the request! Error:" + "\n" + error.localizedDescription)
+                
+                var message = ""
+                if error is CustomError && error as! CustomError == CustomError.networkError {
+                    message = "Network error. Please try again later by tapping reload button"
+                } else {
+                    message = "There was something wrong with the request! Error:" + "\n" + error.localizedDescription
+                }
+                self.info.accept(message)
             }
             self.isFetching.accept(false)
         }

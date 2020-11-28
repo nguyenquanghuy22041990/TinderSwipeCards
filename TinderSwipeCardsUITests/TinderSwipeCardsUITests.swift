@@ -22,28 +22,32 @@ class TinderSwipeCardsUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        
-        app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
+//    func testExample() throws {
+//        // UI tests must launch the application that they test.
+//        let app = XCUIApplication()
+//
+//        app.launch()
+//
+//        // Use recording to get started writing UI tests.
+//        // Use XCTAssert and related functions to verify your tests produce the correct results.
+//    }
+//
+//    func testLaunchPerformance() throws {
+//        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
+//            // This measures how long it takes to launch your application.
+//            measure(metrics: [XCTApplicationLaunchMetric()]) {
+//                XCUIApplication().launch()
+//            }
+//        }
+//    }
     
     func testFirstNameTabIsSelectedByDefault() throws {
         let app = XCUIApplication()
         app.launch()
+        
+        // Wait for the screen is loaded completely
+        sleep(10)
+        
         // First tab will display "My name is"
         XCTAssert(app.staticTexts["My name is"].exists)
     }
@@ -52,6 +56,9 @@ class TinderSwipeCardsUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
+        // Wait for the screen is loaded completely
+        sleep(10)
+        
         let dobButtons = app.buttons.matching(identifier: "DOB Button")
         
         if dobButtons.count > 0 {
@@ -59,13 +66,17 @@ class TinderSwipeCardsUITests: XCTestCase {
             firstButton.tap()
         }
 
-        // First tab will display "My name is"
+        // First tab will display "My birthday is"
+        
         XCTAssert(app.staticTexts["My birthday is"].exists)
     }
     
     func testMyAddressIsDisplayedWhenTapAddressTab() throws {
         let app = XCUIApplication()
         app.launch()
+        
+        // Wait for the screen is loaded completely
+        sleep(10)
         
         let dobButtons = app.buttons.matching(identifier: "Address Button")
         
@@ -74,13 +85,16 @@ class TinderSwipeCardsUITests: XCTestCase {
             firstButton.tap()
         }
 
-        // First tab will display "My name is"
+        // First tab will display "My address is"
         XCTAssert(app.staticTexts["My address is"].exists)
     }
     
-    func testMyPhoneNumberIsDisplayedWhenTapAddressTab() throws {
+    func testMyPhoneNumberIsDisplayedWhenTappingPhoneTab() throws {
         let app = XCUIApplication()
         app.launch()
+        
+        // Wait for the screen is loaded completely
+        sleep(10)
         
         let dobButtons = app.buttons.matching(identifier: "Phone Button")
         
@@ -89,13 +103,16 @@ class TinderSwipeCardsUITests: XCTestCase {
             firstButton.tap()
         }
 
-        // First tab will display "My name is"
+        // First tab will display "My phone number is"
         XCTAssert(app.staticTexts["My phone number is"].exists)
     }
     
-    func testMyPasswordIsDisplayedWhenTapPasswordTab() throws {
+    func testMyPasswordIsDisplayedWhenTappingPasswordTab() throws {
         let app = XCUIApplication()
         app.launch()
+        
+        // Wait for the screen is loaded completely
+        sleep(10)
         
         let dobButtons = app.buttons.matching(identifier: "Password Button")
         
@@ -104,7 +121,20 @@ class TinderSwipeCardsUITests: XCTestCase {
             firstButton.tap()
         }
 
-        // First tab will display "My name is"
+        // First tab will display "My password is"
         XCTAssert(app.staticTexts["My password is"].exists)
+    }
+    
+    func testNavigateToFavoriteScreen() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.buttons["Favorite Button"].tap()
+        
+        // Wait for the screen is loaded completely
+        sleep(10)
+        
+        // Check the title screen is shown
+        XCTAssert(app.staticTexts["Favorite Cards"].exists)
     }
 }

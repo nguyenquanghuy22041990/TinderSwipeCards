@@ -38,7 +38,6 @@
 		1474A1C02568D4970000FB24 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A1BF2568D4970000FB24 /* APIEndpoints.swift */; };
 		14763683256EC9EB004D274C /* ShowFavoriteCardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14763682256EC9EB004D274C /* ShowFavoriteCardUseCase.swift */; };
 		14C573122571464F008AB656 /* GeneralRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C573112571464F008AB656 /* GeneralRepository.swift */; };
-		14C5739125716693008AB656 /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5739025716693008AB656 /* CustomKolodaView.swift */; };
 		14D64A26256CB4B600993066 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A25256CB4B600993066 /* Repository.swift */; };
 		14D64A33256CFC7F00993066 /* AnyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A32256CFC7F00993066 /* AnyRepository.swift */; };
 		14D64A63256D094E00993066 /* PersonObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A62256D094E00993066 /* PersonObject.swift */; };
@@ -117,7 +116,6 @@
 		1474A1BF2568D4970000FB24 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		14763682256EC9EB004D274C /* ShowFavoriteCardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFavoriteCardUseCase.swift; sourceTree = "<group>"; };
 		14C573112571464F008AB656 /* GeneralRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRepository.swift; sourceTree = "<group>"; };
-		14C5739025716693008AB656 /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
 		14D64A25256CB4B600993066 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		14D64A32256CFC7F00993066 /* AnyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyRepository.swift; sourceTree = "<group>"; };
 		14D64A62256D094E00993066 /* PersonObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonObject.swift; sourceTree = "<group>"; };
@@ -284,7 +282,6 @@
 		14737FBA25695B12002612C2 /* ThirdParties */ = {
 			isa = PBXGroup;
 			children = (
-				14C5739025716693008AB656 /* CustomKolodaView.swift */,
 				14E8208B256FFA18001698FF /* CheckNetwork */,
 			);
 			path = ThirdParties;
@@ -813,7 +810,6 @@
 				1474A0F62568BEE50000FB24 /* CardsRepository.swift in Sources */,
 				1474A1BA2568D43B0000FB24 /* GetCardsResult.swift in Sources */,
 				1474A18D2568CDDD0000FB24 /* Timezone.swift in Sources */,
-				14C5739125716693008AB656 /* CustomKolodaView.swift in Sources */,
 				1401EE22256800C400913645 /* SceneDelegate.swift in Sources */,
 				1474A18E2568CDDD0000FB24 /* Coordinates.swift in Sources */,
 				14D64B28256D682500993066 /* FavoritePersonTableViewCell.swift in Sources */,

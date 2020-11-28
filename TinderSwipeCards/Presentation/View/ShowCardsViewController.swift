@@ -32,6 +32,10 @@ class ShowCardsViewController: UIViewController {
         
         customKodaCardView.dataSource = self
         customKodaCardView.delegate = self
+        customKodaCardView.alphaValueOpaque = 1.0
+        customKodaCardView.alphaValueTransparent = 1.0
+        customKodaCardView.alpha = 1.0
+        
         
         self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
         

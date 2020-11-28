@@ -96,6 +96,8 @@ extension ShowCardsViewController: KolodaViewDataSource {
     }
 }
 
+// MARK: - KolodaViewDelegate
+
 extension ShowCardsViewController: KolodaViewDelegate {
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
         if (direction == .right || direction == .bottomRight || direction == .topRight) {
@@ -104,37 +106,4 @@ extension ShowCardsViewController: KolodaViewDelegate {
     }
 }
 
-//extension ShowCardsViewController : SwipeableCardViewDataSource {
-//
-//    func numberOfCards() -> Int {
-//        return showCardsViewModel.numberOfCards
-//    }
-//
-//    func card(forItemAtIndex index: Int) -> SwipeableCardViewCard {
-//
-//        let cardView = SwipeCardView()
-//        cardView.setUpView(swipeCardViewModel: showCardsViewModel.viewModelForCard(at: index), disposeBag: self.disposeBag)
-//        return cardView
-//    }
-//
-//    func viewForEmptyCards() -> UIView? {
-//        return nil
-//    }
-//}
-//
-//extension ShowCardsViewController : SwipeableCardViewDelegate {
-//
-//    func didSwipe(card: SwipeableCardViewCard, direction: SwipeDirection, atIndex index: Int) {
-//        print("Swiped Card \(index) to the \(direction)")
-//        
-//        if (direction == .right || direction == .bottomRight || direction == .topRight) {
-//            _ = showCardsViewModel.saveCard(personObject: showCardsViewModel.viewModelForCard(at: index)!.personObject)
-//        }
-//    }
-//    
-//    func didSelect(card: SwipeableCardViewCard, atIndex index: Int) {
-//        print("Selected Card \(index)")
-//    }
-//
-//}
 

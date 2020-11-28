@@ -137,4 +137,41 @@ class TinderSwipeCardsUITests: XCTestCase {
         // Check the title screen is shown
         XCTAssert(app.staticTexts["Favorite Cards"].exists)
     }
+    
+    func testSwipeRight50timesWillShowNoCardLeftAndThereIs50FavoriteCards() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        sleep(10)
+        
+        for _ in 0...49 {
+            simulatedSwipeRight(app: app)
+        }
+        
+        sleep(5)
+        
+        // Check there is no cards left
+        XCTAssert(!app.staticTexts["My password is"].exists)
+        
+        app.buttons["Favorite Button"].tap()
+        
+        // Wait for the screen is loaded completely
+        sleep(10)
+        
+        
+        // Check there should be 50 favorite cards in the Favorite screen
+        let imageViews = app.images.matching(identifier: "Favorite Card ImageView")
+        XCTAssertEqual(imageViews.count, 50)
+    }
+    
+    func simulatedSwipeRight(app: XCUIApplication) {
+        let staticTexts = app.staticTexts.matching(identifier: "My name is")
+        if (staticTexts.count > 0) {
+            let firstStaticText = staticTexts.element(boundBy: 0)
+            let startPoint = firstStaticText.coordinate(withNormalizedOffset: CGVector(dx: 0, dy:0)) // center of the element
+            let finishPoint = startPoint.withOffset(CGVector(dx: 1000, dy:0))
+            startPoint.press(forDuration: 0, thenDragTo: finishPoint)
+        }
+        
+    }
 }

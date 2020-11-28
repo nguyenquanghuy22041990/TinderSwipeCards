@@ -24,7 +24,7 @@ PODS:
   - Moya/RxSwift (14.0.0):
     - Moya/Core
     - RxSwift (~> 5.0)
-  - pop (1.0.10)
+  - pop (1.0.12)
   - ProgressHUD (13.4)
   - ReachabilitySwift (5.0.0)
   - Realm (10.1.4):
@@ -48,7 +48,6 @@ DEPENDENCIES:
   - Koloda
   - Moya-ModelMapper (~> 10.0)
   - Moya-ModelMapper/RxSwift (~> 10.0)
-  - pop (= 1.0.10)
   - ProgressHUD
   - ReachabilitySwift
   - RealmSwift
@@ -83,7 +82,7 @@ SPEC CHECKSUMS:
   ModelMapper: a8dbf2a2003bf626627b9fe7c9a22b3405a30404
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Moya-ModelMapper: e3a478500921e7299804dc1ac550f1ebf3228ade
-  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   ProgressHUD: 137a7fc677487c5581668f4490563124fb35c232
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Realm: 80f4fb2971ccb9adc27a47d0955ae8e533a7030b
@@ -94,6 +93,6 @@ SPEC CHECKSUMS:
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   RxTest: 711632d5644dffbeb62c936a521b5b008a1e1faa
 
-PODFILE CHECKSUM: bc3c91b5424770432c179a6eb269b9cb516f228a
+PODFILE CHECKSUM: ed188ab19806ee7eeac69de84de2b19b8b74ed6b
 
 COCOAPODS: 1.10.0

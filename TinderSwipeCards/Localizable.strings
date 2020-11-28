@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  TinderSwipeCards
+
+  Created by Huy Quang Nguyen on 11/28/20.
+  
+*/
+
+"net_work_error_message" = "Network error. Please try again later by tapping reload button";
+"failed_api_error_message" = "There was something wrong with the request! Error:";
+"getting_cards_message" = "Getting cards...";
+
+"my_name_is_string" = "My name is";
+"my_birthday_is_string" = "My birthday is";
+"my_address_is_string" = "My address is";
+"my_phone_number_is_string" = "My phone number is";
+"my_password_is_string" = "My password is";

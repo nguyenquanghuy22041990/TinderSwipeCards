@@ -31,7 +31,7 @@ class FavoriteCardsViewController: UIViewController {
         
         self.showFavoriteCardsViewModel.isFetching.subscribe(onNext: { (isFetching) in
             if (isFetching) {
-                ProgressHUD.show("Get cards...")
+                ProgressHUD.show(NSLocalizedString("getting_cards_message", comment: ""))
             } else {
                 ProgressHUD.dismiss()
             }

@@ -24,5 +24,4 @@ class FavoritePersonTableViewCell: UITableViewCell {
         profileImageView.kf.setImage(with: URL(string: favoriteCardViewModel.personObject.picturePath))
         nameLabel.text = favoriteCardViewModel.personObject.fullName
     }
-
 }

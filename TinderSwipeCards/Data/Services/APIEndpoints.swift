@@ -8,7 +8,6 @@
 import Foundation
 import Moya
 
-
 private extension String {
     var URLEscapedString: String {
         return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)!
@@ -48,13 +47,11 @@ extension GetPeople: TargetType {
           switch self {
             case .get(let results):
                 return .requestParameters(parameters: ["results": results], encoding: URLEncoding.default)
-            
          }
     }
     
     var headers: [String : String]? {
         return nil
     }
-    
 }
 

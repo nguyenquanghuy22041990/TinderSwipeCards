@@ -15,5 +15,4 @@ struct GetCardsResult: Mappable {
     init(map: Mapper) throws {
         people = try map.from("results")
     }
-
 }

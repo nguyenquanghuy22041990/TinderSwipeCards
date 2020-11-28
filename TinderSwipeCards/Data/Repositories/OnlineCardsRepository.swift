@@ -42,15 +42,11 @@ extension OnlineCardsRepository: CardsRepository {
         } onNetworkError: {
             completion(.failure(CustomError.networkError))
         }
-
-        
     }
     
     func saveCardRepository(card: PersonObject) -> Bool! {
         //TODO: Save a card to database of server - Implement later
         return true
     }
-
-    
 }
 

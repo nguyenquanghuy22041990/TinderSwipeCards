@@ -8,7 +8,6 @@
 import Foundation
 import RealmSwift
 
-
 extension PersonObject: Entity {
     private var personModel: PersonModel {
         let realmPerson = PersonModel()

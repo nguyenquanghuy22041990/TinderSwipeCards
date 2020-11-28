@@ -13,5 +13,4 @@ class FavoriteCardViewModel {
     init(personObject: PersonObject) {
         self.personObject = personObject
     }
-    
 }

@@ -22,7 +22,6 @@ final class SwipeCardViewModel {
         self.personObject = personObject
     }
     
-
     var isNameButtonSelected: Observable<Bool> {
         return Observable.combineLatest(didSelectNameButton, didSelectDobButton, didSelectAddressButton, didSelectPhoneButton, didSelectPasswordButton) {
                     if $0, !$1, !$2, !$3, !$4 {

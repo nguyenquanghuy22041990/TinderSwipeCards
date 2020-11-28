@@ -37,6 +37,7 @@
 		1474A1BA2568D43B0000FB24 /* GetCardsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A1B92568D43B0000FB24 /* GetCardsResult.swift */; };
 		1474A1C02568D4970000FB24 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474A1BF2568D4970000FB24 /* APIEndpoints.swift */; };
 		14763683256EC9EB004D274C /* ShowFavoriteCardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14763682256EC9EB004D274C /* ShowFavoriteCardUseCase.swift */; };
+		14A466802572A5F900715B55 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14A4667F2572A5F900715B55 /* Localizable.strings */; };
 		14C573122571464F008AB656 /* GeneralRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C573112571464F008AB656 /* GeneralRepository.swift */; };
 		14D64A26256CB4B600993066 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A25256CB4B600993066 /* Repository.swift */; };
 		14D64A33256CFC7F00993066 /* AnyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A32256CFC7F00993066 /* AnyRepository.swift */; };
@@ -115,6 +116,8 @@
 		1474A1B92568D43B0000FB24 /* GetCardsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCardsResult.swift; sourceTree = "<group>"; };
 		1474A1BF2568D4970000FB24 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		14763682256EC9EB004D274C /* ShowFavoriteCardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFavoriteCardUseCase.swift; sourceTree = "<group>"; };
+		14A4667F2572A5F900715B55 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		14A466A02572B8AC00715B55 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		14C573112571464F008AB656 /* GeneralRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRepository.swift; sourceTree = "<group>"; };
 		14D64A25256CB4B600993066 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		14D64A32256CFC7F00993066 /* AnyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyRepository.swift; sourceTree = "<group>"; };
@@ -206,8 +209,10 @@
 				1401EE2B256800C500913645 /* Assets.xcassets */,
 				1401EE2D256800C500913645 /* LaunchScreen.storyboard */,
 				1401EE30256800C500913645 /* Info.plist */,
+				14A4667F2572A5F900715B55 /* Localizable.strings */,
 				1401EE28256800C400913645 /* TinderSwipeCards.xcdatamodeld */,
 				14D64ADF256D56CD00993066 /* AlertWrapper.swift */,
+				14A466A02572B8AC00715B55 /* README.md */,
 			);
 			path = TinderSwipeCards;
 			sourceTree = "<group>";
@@ -638,6 +643,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A466802572A5F900715B55 /* Localizable.strings in Resources */,
 				1401EE2F256800C500913645 /* LaunchScreen.storyboard in Resources */,
 				1401EE2C256800C500913645 /* Assets.xcassets in Resources */,
 				1401EE27256800C400913645 /* Main.storyboard in Resources */,
@@ -885,6 +891,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -946,6 +953,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

@@ -21,25 +21,6 @@ class TinderSwipeCardsUITests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-//    func testExample() throws {
-//        // UI tests must launch the application that they test.
-//        let app = XCUIApplication()
-//
-//        app.launch()
-//
-//        // Use recording to get started writing UI tests.
-//        // Use XCTAssert and related functions to verify your tests produce the correct results.
-//    }
-//
-//    func testLaunchPerformance() throws {
-//        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-//            // This measures how long it takes to launch your application.
-//            measure(metrics: [XCTApplicationLaunchMetric()]) {
-//                XCUIApplication().launch()
-//            }
-//        }
-//    }
     
     func testFirstNameTabIsSelectedByDefault() throws {
         let app = XCUIApplication()
@@ -78,10 +59,10 @@ class TinderSwipeCardsUITests: XCTestCase {
         // Wait for the screen is loaded completely
         sleep(10)
         
-        let dobButtons = app.buttons.matching(identifier: "Address Button")
+        let addressButtons = app.buttons.matching(identifier: "Address Button")
         
-        if dobButtons.count > 0 {
-            let firstButton = dobButtons.element(boundBy: 0)
+        if addressButtons.count > 0 {
+            let firstButton = addressButtons.element(boundBy: 0)
             firstButton.tap()
         }
 
@@ -96,10 +77,10 @@ class TinderSwipeCardsUITests: XCTestCase {
         // Wait for the screen is loaded completely
         sleep(10)
         
-        let dobButtons = app.buttons.matching(identifier: "Phone Button")
+        let phoneButtons = app.buttons.matching(identifier: "Phone Button")
         
-        if dobButtons.count > 0 {
-            let firstButton = dobButtons.element(boundBy: 0)
+        if phoneButtons.count > 0 {
+            let firstButton = phoneButtons.element(boundBy: 0)
             firstButton.tap()
         }
 
@@ -114,10 +95,10 @@ class TinderSwipeCardsUITests: XCTestCase {
         // Wait for the screen is loaded completely
         sleep(10)
         
-        let dobButtons = app.buttons.matching(identifier: "Password Button")
+        let passwordButtons = app.buttons.matching(identifier: "Password Button")
         
-        if dobButtons.count > 0 {
-            let firstButton = dobButtons.element(boundBy: 0)
+        if passwordButtons.count > 0 {
+            let firstButton = passwordButtons.element(boundBy: 0)
             firstButton.tap()
         }
 
@@ -138,7 +119,7 @@ class TinderSwipeCardsUITests: XCTestCase {
         XCTAssert(app.staticTexts["Favorite Cards"].exists)
     }
     
-    func testSwipeRight50timesWillShowNoCardLeftAndThereIs50FavoriteCards() throws {
+    func testSwipeRight50timesThereWillNoCardsLeftUntilReloadAndThereIs50FavoriteCards() throws {
         let app = XCUIApplication()
         app.launch()
         
@@ -153,15 +134,22 @@ class TinderSwipeCardsUITests: XCTestCase {
         // Check there is no cards left
         XCTAssert(!app.staticTexts["My password is"].exists)
         
+        app.buttons["Reload Button"].tap()
+        
+        sleep(10)
+        
+        // Check there is cards reloaded again
+        XCTAssert(app.staticTexts["My name is"].exists)
+        
+        // Go to the favorite cards screen
         app.buttons["Favorite Button"].tap()
         
         // Wait for the screen is loaded completely
         sleep(10)
         
-        
-        // Check there should be 50 favorite cards in the Favorite screen
+        // Check there should be >= 50 favorite cards in the Favorite screen
         let imageViews = app.images.matching(identifier: "Favorite Card ImageView")
-        XCTAssertEqual(imageViews.count, 50)
+        XCTAssertTrue(imageViews.count >= 50)
     }
     
     func simulatedSwipeRight(app: XCUIApplication) {
@@ -172,6 +160,5 @@ class TinderSwipeCardsUITests: XCTestCase {
             let finishPoint = startPoint.withOffset(CGVector(dx: 1000, dy:0))
             startPoint.press(forDuration: 0, thenDragTo: finishPoint)
         }
-        
     }
 }

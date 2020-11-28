@@ -43,5 +43,4 @@ extension LocalFavoriteCardsRepository: CardsRepository {
         
         return true
     }
-    
 }

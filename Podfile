@@ -9,7 +9,6 @@ def common_pods_for_target
   pod 'Moya-ModelMapper/RxSwift', '~> 10.0'
   pod 'Kingfisher'
   pod 'ProgressHUD'
-  pod 'pop', '1.0.10'
   pod 'ReachabilitySwift'
   pod 'RealmSwift'
   pod "Koloda"

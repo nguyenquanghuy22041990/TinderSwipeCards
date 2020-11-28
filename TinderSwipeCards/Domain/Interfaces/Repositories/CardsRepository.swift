@@ -9,7 +9,7 @@ import Foundation
 
 protocol CardsRepository {
     func getListPeople(results: String!,
-                       completion:@escaping (Result<[PersonObject], Error>) ->Void)
+                    completion:@escaping (Result<[PersonObject], Error>) ->Void)
     
     func saveCardRepository(card: PersonObject) -> Bool!
 }

@@ -50,7 +50,6 @@ struct Person: Mappable {
         return myString
       }
 
-    
     func getAddress() ->String! {
         return (location?.street?.number?.description ?? "") + " " + (location?.street?.name ?? "")
     }

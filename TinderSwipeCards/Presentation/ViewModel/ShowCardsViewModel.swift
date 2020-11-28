@@ -25,7 +25,6 @@ final class ShowCardsViewModel {
         getCards()
     }
     
-
     var numberOfCards: Int {
         return swipeCardViewModelList.value.count
     }
@@ -37,7 +36,6 @@ final class ShowCardsViewModel {
         
         return SwipeCardViewModel(personObject: swipeCardViewModelList.value[index].personObject)
     }
-    
     
     func getCards() {
         self.isFetching.accept(true)
@@ -54,9 +52,9 @@ final class ShowCardsViewModel {
                 
                 var message = ""
                 if error is CustomError && error as! CustomError == CustomError.networkError {
-                    message = "Network error. Please try again later by tapping reload button"
+                    message = NSLocalizedString("net_work_error_message", comment: "")
                 } else {
-                    message = "There was something wrong with the request! Error:" + "\n" + error.localizedDescription
+                    message = NSLocalizedString("failed_api_error_message", comment: "") + "\n" + error.localizedDescription
                 }
                 self.info.accept(message)
             }

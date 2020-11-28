@@ -36,7 +36,6 @@ class ShowCardsViewController: UIViewController {
         customKodaCardView.alphaValueTransparent = 1.0
         customKodaCardView.alpha = 1.0
         
-        
         self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
         
     }
@@ -50,7 +49,7 @@ class ShowCardsViewController: UIViewController {
     
     func setUpBinding() {
         self.showCardsViewModel.swipeCardViewModelList.subscribe(onNext: { (_) in
-            self.customKodaCardView.reloadData()
+            self.customKodaCardView.resetCurrentCardIndex()
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
         self.showCardsViewModel.info.subscribe(onNext: { [unowned self](infoString) in
@@ -62,7 +61,7 @@ class ShowCardsViewController: UIViewController {
 
         self.showCardsViewModel.isFetching.subscribe(onNext: { (isFetching) in
             if (isFetching) {
-                ProgressHUD.show("Get cards...")
+                ProgressHUD.show(NSLocalizedString("getting_cards_message", comment: ""))
             } else {
                 ProgressHUD.dismiss()
             }
@@ -90,9 +89,8 @@ extension ShowCardsViewController: KolodaViewDataSource {
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         let cardView = UINib(nibName: "SwipeCardView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SwipeCardView
-        //cardView.frame = CGRect(x: 0, y: 0, width: self.customKodaCardView.frame.size.width, height: self.customKodaCardView.frame.size.height)
-                cardView.setUpView(swipeCardViewModel: showCardsViewModel.viewModelForCard(at: index), disposeBag: self.disposeBag)
-                return cardView
+        cardView.setUpView(swipeCardViewModel: showCardsViewModel.viewModelForCard(at: index), disposeBag: self.disposeBag)
+        return cardView
     }
 }
 

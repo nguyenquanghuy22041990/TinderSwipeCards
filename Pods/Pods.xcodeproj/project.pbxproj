@@ -121,6 +121,7 @@
 		229D309CB4F5B38F80B0273A4E3E7C9F /* POPAnimationTracer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9693465C90EC442E7E04CF29C505951E /* POPAnimationTracer.mm */; };
 		229FC56987423F441D813097E4049739 /* pop-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 084BB17061A3B58A26F1D2EDA27AD668 /* pop-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		230C9804D93E905D0B8A8F89EF7F87FF /* Disposables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC2B3BCF6120EDE0A031AE99ABDC28 /* Disposables.swift */; };
+		23541C2ED896DE05A7CA0AB6286C4C40 /* POPVector.h in Headers */ = {isa = PBXBuildFile; fileRef = F96796A22085CAB8A2B81B65D43B986A /* POPVector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		23A4EF746AB64504DEB5EFDBA5450492 /* RxCocoa-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE139D242CD59DF24FE48C90A26B65EE /* RxCocoa-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		248D07398FFDD157ACC8B07494BDBAF1 /* BooleanDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD66C7993ED085A1F82E42B811F42178 /* BooleanDisposable.swift */; };
 		24B91EC9BFA83883C990CF44AAA59CD3 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 510E63E7A2E37D8C89937CA963A3EBFE /* Alamofire.framework */; };
@@ -467,7 +468,6 @@
 		8D7DBC4316F288B12023F9C8BF0721FF /* RLMRealm_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 5185DD759797C3E0220E57A5D4607655 /* RLMRealm_Private.h */; };
 		8D8F5624C95284823A915FA0E83F9193 /* InvocableScheduledItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD97C233B7156E2EF0134B52BDDDEE6 /* InvocableScheduledItem.swift */; };
 		8DB9FCCBCEFC43805C30843DB57744A6 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95954065DF1EAD4AB879E3DA530A584E /* Lock.swift */; };
-		8E2DA7C212D42F08E7312CC46E902834 /* POPVector.h in Headers */ = {isa = PBXBuildFile; fileRef = F96796A22085CAB8A2B81B65D43B986A /* POPVector.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		8E40800949EB08AF75ABE0540E496066 /* ScheduledDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C157430BC3D1BB079133EB9CBEFAF02 /* ScheduledDisposable.swift */; };
 		8E516673E5222246C3C320F8EF8E8210 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89950EC6137C8DE8CBF9275CA137354E /* Cancellable.swift */; };
 		8E6B3C568E20B31261DCECE9B232AE31 /* InvocableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CC2E7658BF2184938BE12CC02E33D8 /* InvocableType.swift */; };
@@ -3688,7 +3688,7 @@
 				792B4D27C80C899345F217E1EF1B4BC4 /* POPSpringAnimation.h in Headers */,
 				091B2C000602FADE3DA7D24BA75E67C5 /* POPSpringAnimationInternal.h in Headers */,
 				EA5AA9FB8D50CF6BE34967D10534D0B8 /* POPSpringSolver.h in Headers */,
-				8E2DA7C212D42F08E7312CC46E902834 /* POPVector.h in Headers */,
+				23541C2ED896DE05A7CA0AB6286C4C40 /* POPVector.h in Headers */,
 				ADD1DEFF830F4D0AE3FCDC23FCA7A1A8 /* TransformationMatrix.h in Headers */,
 				63413ADD885D30114A1AC476FFF53224 /* UnitBezier.h in Headers */,
 			);

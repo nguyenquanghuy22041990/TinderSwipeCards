@@ -313,6 +313,7 @@
 		1474A0F12568BE850000FB24 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				14D64A61256D093B00993066 /* Entities */,
 				1474A0F32568BEA50000FB24 /* Interfaces */,
 				1474A0F22568BE9A0000FB24 /* UseCases */,
 			);
@@ -351,7 +352,6 @@
 				14D64A71256D3D5400993066 /* Repositories */,
 				14E28220256A101E0089A571 /* Database */,
 				1474A1BE2568D4760000FB24 /* Services */,
-				1474A1022568C07A0000FB24 /* ObjectMappers */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -449,6 +449,7 @@
 		1474A1BE2568D4760000FB24 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1474A1022568C07A0000FB24 /* ObjectMappers */,
 				1474A1BF2568D4970000FB24 /* APIEndpoints.swift */,
 			);
 			path = Services;
@@ -464,12 +465,12 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
-		14D64A61256D093B00993066 /* Object */ = {
+		14D64A61256D093B00993066 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				14D64A62256D094E00993066 /* PersonObject.swift */,
 			);
-			path = Object;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		14D64A71256D3D5400993066 /* Repositories */ = {
@@ -484,7 +485,6 @@
 		14E28220256A101E0089A571 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				14D64A61256D093B00993066 /* Object */,
 				14D64A24256CB4A300993066 /* Persistence */,
 				14E28221256A102D0089A571 /* Model */,
 			);

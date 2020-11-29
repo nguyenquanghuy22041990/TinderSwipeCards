@@ -117,7 +117,6 @@
 		1474A1BF2568D4970000FB24 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		14763682256EC9EB004D274C /* ShowFavoriteCardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFavoriteCardUseCase.swift; sourceTree = "<group>"; };
 		14A4667F2572A5F900715B55 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		14A466A02572B8AC00715B55 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		14C573112571464F008AB656 /* GeneralRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRepository.swift; sourceTree = "<group>"; };
 		14D64A25256CB4B600993066 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		14D64A32256CFC7F00993066 /* AnyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyRepository.swift; sourceTree = "<group>"; };
@@ -212,7 +211,6 @@
 				14A4667F2572A5F900715B55 /* Localizable.strings */,
 				1401EE28256800C400913645 /* TinderSwipeCards.xcdatamodeld */,
 				14D64ADF256D56CD00993066 /* AlertWrapper.swift */,
-				14A466A02572B8AC00715B55 /* README.md */,
 			);
 			path = TinderSwipeCards;
 			sourceTree = "<group>";

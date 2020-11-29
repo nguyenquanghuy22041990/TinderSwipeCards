@@ -8,15 +8,15 @@ The project uses MVVM architecture
 
 # Third parties is used in the project:
 
-RxSwift
-RxCocoa
-Moya-ModelMapper
-Moya-ModelMapper/RxSwift
-Kingfisher
-ProgressHUD
-ReachabilitySwift
-RealmSwift
-Koloda
+RxSwift<br/>
+RxCocoa<br/>
+Moya-ModelMapper<br/>
+Moya-ModelMapper/RxSwift<br/>
+Kingfisher<br/>
+ProgressHUD<br/>
+ReachabilitySwift<br/>
+RealmSwift<br/>
+Koloda<br/>
 
 
 # Limitations

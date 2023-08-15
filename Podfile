@@ -2,9 +2,13 @@
 use_frameworks!
 
 
+def common_rx_swift_pods_for_targets
+  pod 'RxSwift'
+  pod 'RxCocoa'
+end
+
 def common_pods_for_target
-  pod 'RxSwift', '~> 5'
-  pod 'RxCocoa', '~> 5'
+  common_rx_swift_pods_for_targets
   pod 'Moya-ModelMapper', '~> 10.0'
   pod 'Moya-ModelMapper/RxSwift', '~> 10.0'
   pod 'Kingfisher'
@@ -14,22 +18,25 @@ def common_pods_for_target
   pod "Koloda"
 end
 
+
 target 'TinderSwipeCards' do
   common_pods_for_target
 end
 
 # RxTest and RxBlocking make the most sense in the context of unit/integration tests
+
+def common_rx_swift_for_test_targets
+  pod 'RxBlocking'
+  pod 'RxTest'
+end
+
 target 'TinderSwipeCardsTests' do
-    pod 'RxSwift', '~> 5'
-    pod 'RxCocoa', '~> 5'
-    pod 'RxBlocking', '~> 5'
-    pod 'RxTest', '~> 5'
+    common_rx_swift_pods_for_targets
+    common_rx_swift_for_test_targets
     pod 'RealmSwift'
 end
 
 target 'TinderSwipeCardsUITests' do
-    pod 'RxSwift', '~> 5'
-    pod 'RxCocoa', '~> 5'
-    pod 'RxBlocking', '~> 5'
-    pod 'RxTest', '~> 5'
+  common_rx_swift_pods_for_targets
+  common_rx_swift_for_test_targets
 end

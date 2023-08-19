@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-    var onlineCardsRepository: OnlineCardsRepository = OnlineCardsRepository(provider: MoyaProvider<GetPeople>(), checkNetworkManager: ReachabilityCheckNetworkManager())
+    var remoteCardsRepository: RemoteCardsRepository = DefaultRemoteCardsRepository(provider: MoyaProvider<GetPeople>(), checkNetworkManager: ReachabilityCheckNetworkManager())
     var localFavoriteCardsRepository: LocalFavoriteCardsRepository = LocalFavoriteCardsRepository(personRepository:  GeneralRepository.sharedInstance.personRepository)
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -62,8 +62,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func injectDependencies() {
         let showCardsViewController: ShowCardsViewController = window?.rootViewController as! ShowCardsViewController
         
-        showCardsViewController.getCardsUseCase = DefaultGetOnlineCardsUseCase(getCardsRepository: self.onlineCardsRepository)
-        showCardsViewController.saveCardUseCase = DefaultSaveCardUseCase(localFavoriteCardsRepository: localFavoriteCardsRepository)
+        showCardsViewController.getCardsUseCase = DefaultGetRemoteCardsUseCase(getCardsRepository: self.remoteCardsRepository)
+        showCardsViewController.saveCardUseCase = DefaultSaveCardUseCase(saveCardRepository: localFavoriteCardsRepository)
     }
 }
 

@@ -17,17 +17,17 @@ class ShowCardsViewModelTest: XCTestCase {
     var showCardsViewModel: ShowCardsViewModel!
     var scheduler: ConcurrentDispatchQueueScheduler!
     var testScheduler: TestScheduler!
-    var mockGetOnlineCardRepository: MockCardsRepository!
-    var mockSaveCardRepository: MockCardsRepository!
+    var mockGetRemoteCardRepository: MockRemoteCardsRepository!
+    var mockSaveCardRepository: MockLocalCardsRepository!
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
         disposeBag = DisposeBag()
-        mockGetOnlineCardRepository = MockCardsRepository()
-        mockSaveCardRepository = MockCardsRepository()
+        mockGetRemoteCardRepository = MockRemoteCardsRepository()
+        mockSaveCardRepository = MockLocalCardsRepository()
         
-        showCardsViewModel = ShowCardsViewModel(getCardsUseCase: DefaultGetOnlineCardsUseCase(getCardsRepository: mockGetOnlineCardRepository), saveCardUseCase: DefaultSaveCardUseCase(localFavoriteCardsRepository: mockSaveCardRepository), disposeBag: disposeBag)
+        showCardsViewModel = ShowCardsViewModel(getCardsUseCase: DefaultGetRemoteCardsUseCase(getCardsRepository: mockGetRemoteCardRepository), saveCardUseCase: DefaultSaveCardUseCase(saveCardRepository: mockSaveCardRepository), disposeBag: disposeBag)
         
         scheduler = ConcurrentDispatchQueueScheduler(qos: .default)
         testScheduler = TestScheduler(initialClock: 0)
@@ -56,17 +56,17 @@ class ShowCardsViewModelTest: XCTestCase {
         XCTAssertEqual(try infoMessage.toBlocking().first(), "An error occurred")
     }
     
-    func testValuesWhenCallApiSuccessfully() throws {
+    func testValuesWhenCallApiSuccessfully() async throws {
         let swipeCardViewModelListValue = showCardsViewModel.swipeCardViewModelList.subscribeOn(scheduler)
         let infoMessage = showCardsViewModel.info.subscribeOn(scheduler)
         let isFetching = showCardsViewModel.isFetching.subscribeOn(scheduler)
         
-        mockGetOnlineCardRepository.simulatedCase = .didGetListCardsSuccessfully
+        mockGetRemoteCardRepository.simulatedCase = .didGetListCardsSuccessfully
         
         let personObject = PersonObject(fullName: "FullName", birthday: "22/04/1990", address: "Ho Chi Minh city", phoneNumber: "9999 9999 999", password: "abc-123", picturePath: "picturePath")
-        mockGetOnlineCardRepository.mockPersonObjectList = [personObject]
+        mockGetRemoteCardRepository.mockPersonObjectList = [personObject]
         
-        showCardsViewModel.getCards()
+        await showCardsViewModel.getCards()
         
         let cardViewModelList = try swipeCardViewModelListValue.toBlocking().first()
         XCTAssertEqual(cardViewModelList?.count, 1)
@@ -74,14 +74,14 @@ class ShowCardsViewModelTest: XCTestCase {
         XCTAssertEqual(try isFetching.toBlocking().first(), false)
     }
     
-    func testValuesWhenCallApiUnsuccessfully() throws {
+    func testValuesWhenCallApiUnsuccessfully() async throws {
         let swipeCardViewModelListValue = showCardsViewModel.swipeCardViewModelList.subscribeOn(scheduler)
         let infoMessage = showCardsViewModel.info.subscribeOn(scheduler)
         let isFetching = showCardsViewModel.isFetching.subscribeOn(scheduler)
         
-        mockGetOnlineCardRepository.simulatedCase = .didGetListCardsFailed
+        mockGetRemoteCardRepository.simulatedCase = .didGetListCardsFailed
     
-        showCardsViewModel.getCards()
+        await showCardsViewModel.getCards()
         
         let cardViewModelList = try swipeCardViewModelListValue.toBlocking().first()
         XCTAssertEqual(cardViewModelList?.count, 0)
@@ -92,14 +92,14 @@ class ShowCardsViewModelTest: XCTestCase {
         XCTAssertEqual(try isFetching.toBlocking().first(), false)
     }
     
-    func testValuesWhenNetworkIsUnavailable() throws {
+    func testValuesWhenNetworkIsUnavailable() async throws {
         let swipeCardViewModelListValue = showCardsViewModel.swipeCardViewModelList.subscribeOn(scheduler)
         let infoMessage = showCardsViewModel.info.subscribeOn(scheduler)
         let isFetching = showCardsViewModel.isFetching.subscribeOn(scheduler)
         
-        mockGetOnlineCardRepository.simulatedCase = .didTriggerNetworkErrorMessage
+        mockGetRemoteCardRepository.simulatedCase = .didTriggerNetworkErrorMessage
     
-        showCardsViewModel.getCards()
+        await showCardsViewModel.getCards()
         
         let cardViewModelList = try swipeCardViewModelListValue.toBlocking().first()
         XCTAssertEqual(cardViewModelList?.count, 0)
@@ -110,14 +110,14 @@ class ShowCardsViewModelTest: XCTestCase {
         XCTAssertEqual(try isFetching.toBlocking().first(), false)
     }
     
-    func testViewModelForCardWhenCallApiSuccessfully() throws {
+    func testViewModelForCardWhenCallApiSuccessfully() async throws {
         
-        mockGetOnlineCardRepository.simulatedCase = .didGetListCardsSuccessfully
+        mockGetRemoteCardRepository.simulatedCase = .didGetListCardsSuccessfully
         
         let personObject = PersonObject(fullName: "FullName", birthday: "22/04/1990", address: "Ho Chi Minh city", phoneNumber: "9999 9999 999", password: "abc-123", picturePath: "picturePath")
-        mockGetOnlineCardRepository.mockPersonObjectList = [personObject]
+        mockGetRemoteCardRepository.mockPersonObjectList = [personObject]
         
-        showCardsViewModel.getCards()
+        await showCardsViewModel.getCards()
         
         let cardViewModel = showCardsViewModel.viewModelForCard(at:0)
         XCTAssertEqual(cardViewModel!.personObject.fullName, personObject.fullName)
@@ -125,17 +125,17 @@ class ShowCardsViewModelTest: XCTestCase {
     
     func testViewModelForCardIsNilWhenIndexIsBiggerThanTheNumberOfViewModelForCard() throws {
         
-        mockGetOnlineCardRepository.simulatedCase = .didGetListCardsSuccessfully
+        mockGetRemoteCardRepository.simulatedCase = .didGetListCardsSuccessfully
         let cardViewModel = showCardsViewModel.viewModelForCard(at:10)
         XCTAssertTrue(cardViewModel == nil)
     }
     
     func testSaveCardSuccessfully() throws {
         
-        mockGetOnlineCardRepository.didSaveCardSuccessfully = true
+        mockGetRemoteCardRepository.didSaveCardSuccessfully = true
         
         let personObject = PersonObject(fullName: "FullName", birthday: "22/04/1990", address: "Ho Chi Minh city", phoneNumber: "9999 9999 999", password: "abc-123", picturePath: "picturePath")
-        mockGetOnlineCardRepository.mockPersonObjectList = [personObject]
+        mockGetRemoteCardRepository.mockPersonObjectList = [personObject]
         
         let saveCardResult = showCardsViewModel.saveCard(personObject: personObject)
         

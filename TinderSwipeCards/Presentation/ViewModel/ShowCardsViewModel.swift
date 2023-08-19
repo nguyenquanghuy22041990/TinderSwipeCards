@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 final class ShowCardsViewModel {
-    private let getCardsUseCase: GetOnlineCardsUseCase
+    private let getCardsUseCase: GetRemoteCardsUseCase
     private let saveCardUseCase: SaveCardUseCase
     private let disposeBag: DisposeBag
     
@@ -18,11 +18,13 @@ final class ShowCardsViewModel {
     let info = BehaviorRelay<String?>(value: "")
     let swipeCardViewModelList: BehaviorRelay<[SwipeCardViewModel]> = BehaviorRelay<[SwipeCardViewModel]>(value: [])
     
-    init(getCardsUseCase: GetOnlineCardsUseCase, saveCardUseCase: SaveCardUseCase, disposeBag: DisposeBag) {
+    init(getCardsUseCase: GetRemoteCardsUseCase, saveCardUseCase: SaveCardUseCase, disposeBag: DisposeBag) {
         self.getCardsUseCase = getCardsUseCase
         self.saveCardUseCase = saveCardUseCase
         self.disposeBag = disposeBag
-        getCards()
+        Task.init {
+            await getCards()
+        }
     }
     
     var numberOfCards: Int {
@@ -37,27 +39,23 @@ final class ShowCardsViewModel {
         return SwipeCardViewModel(personObject: swipeCardViewModelList.value[index].personObject)
     }
     
-    func getCards() {
+    func getCards() async {
         self.isFetching.accept(true)
-        getCardsUseCase.excute(results: "50") { (result) in
-            
-            switch result {
-            case .success(let people):
-                let swipeCardViewModelList = people.map({SwipeCardViewModel(personObject: $0)})
-                self.swipeCardViewModelList.accept(swipeCardViewModelList)
-                self.info.accept("")
-            
-            case .failure(let error):
-                self.swipeCardViewModelList.accept([])
-                
-                var message = ""
-                if error is CustomError && error as! CustomError == CustomError.networkError {
-                    message = NSLocalizedString("net_work_error_message", comment: "")
-                } else {
-                    message = NSLocalizedString("failed_api_error_message", comment: "") + "\n" + error.localizedDescription
-                }
-                self.info.accept(message)
+        do {
+            let people = try await getCardsUseCase.excute(results: "50")
+            let swipeCardViewModelList = people.map({SwipeCardViewModel(personObject: $0)})
+            self.swipeCardViewModelList.accept(swipeCardViewModelList)
+            self.info.accept("")
+            self.isFetching.accept(false)
+        } catch {
+            self.swipeCardViewModelList.accept([])
+            var message = ""
+            if error is CustomError && error as! CustomError == CustomError.networkError {
+                message = NSLocalizedString("net_work_error_message", comment: "")
+            } else {
+                message = NSLocalizedString("failed_api_error_message", comment: "") + "\n" + error.localizedDescription
             }
+            self.info.accept(message)
             self.isFetching.accept(false)
         }
     }

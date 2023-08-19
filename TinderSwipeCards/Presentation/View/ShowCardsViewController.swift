@@ -17,7 +17,7 @@ class ShowCardsViewController: UIViewController {
     @IBOutlet weak var reloadButton: UIButton!
     @IBOutlet weak var heartButton: UIButton!
 
-    var getCardsUseCase: GetOnlineCardsUseCase!
+    var getCardsUseCase: GetRemoteCardsUseCase!
     var saveCardUseCase: SaveCardUseCase!
     var disposeBag: DisposeBag! = DisposeBag()
     private var showCardsViewModel: ShowCardsViewModel!
@@ -27,7 +27,6 @@ class ShowCardsViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         showCardsViewModel = ShowCardsViewModel(getCardsUseCase: getCardsUseCase, saveCardUseCase: saveCardUseCase, disposeBag: disposeBag)
-        
         setUpBinding()
         
         customKodaCardView.dataSource = self
@@ -48,18 +47,20 @@ class ShowCardsViewController: UIViewController {
     }
     
     func setUpBinding() {
-        self.showCardsViewModel.swipeCardViewModelList.subscribe(onNext: { (_) in
-            self.customKodaCardView.resetCurrentCardIndex()
+        showCardsViewModel.swipeCardViewModelList.subscribe(onNext: { [unowned self](_) in
+            Task {
+                self.customKodaCardView.resetCurrentCardIndex()
+            }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
-        self.showCardsViewModel.info.subscribe(onNext: { [unowned self](infoString) in
+        showCardsViewModel.info.subscribe(onNext: { [unowned self](infoString) in
             if (infoString != "") {
                 let errorAlertController = AlertWrapper.getErrorAlertController(message: infoString)
                 self.present(errorAlertController, animated: true, completion: nil)
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
 
-        self.showCardsViewModel.isFetching.subscribe(onNext: { (isFetching) in
+        showCardsViewModel.isFetching.subscribe(onNext: { (isFetching) in
             if (isFetching) {
                 ProgressHUD.show(NSLocalizedString("getting_cards_message", comment: ""))
             } else {
@@ -68,7 +69,9 @@ class ShowCardsViewController: UIViewController {
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
 
         reloadButton.rx.tap.asDriver().drive(onNext: { [unowned self](_) in
-            self.showCardsViewModel.getCards()
+            Task {
+             await  self.showCardsViewModel.getCards()
+            }
         }, onCompleted: nil, onDisposed: nil)
         .disposed(by: disposeBag)
         

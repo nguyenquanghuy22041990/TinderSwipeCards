@@ -12,14 +12,14 @@ protocol SaveCardUseCase {
 }
 
 final class DefaultSaveCardUseCase: SaveCardUseCase {
-    private let localFavoriteCardsRepository: CardsRepository
+    private let saveCardRepository: SaveCardRepository
     
-    init(localFavoriteCardsRepository: CardsRepository) {
-        self.localFavoriteCardsRepository = localFavoriteCardsRepository
+    init(saveCardRepository: SaveCardRepository) {
+        self.saveCardRepository = saveCardRepository
     }
     
     func saveCard(card: PersonObject) -> Bool! {
-        return localFavoriteCardsRepository.saveCardRepository(card: card)
+        return saveCardRepository.saveCardRepository(card: card)
     }
     
     

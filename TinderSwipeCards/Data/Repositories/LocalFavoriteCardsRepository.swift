@@ -15,12 +15,11 @@ final class LocalFavoriteCardsRepository {
     }
 }
 
-extension LocalFavoriteCardsRepository: CardsRepository {
-    func getListPeople(results: String!, completion: @escaping (Result<[PersonObject], Error>) -> Void) {
+extension LocalFavoriteCardsRepository: LocalCardsRepository {
+    func getListFavoritePeople() -> [PersonObject] {
         // Maybe in the future we will have a need to use results to get a specific number of favorite cards. Now we will get all favorite cards from local database
-    
         let favoriteCardsList = favoriteCardsRepository.getAll()
-        completion(.success(favoriteCardsList))
+        return favoriteCardsList
     }
     
     func saveCardRepository(card: PersonObject) -> Bool! {

@@ -20,7 +20,6 @@ final class ShowFavoriteCardsViewModel {
     init(getCardsUseCase: GetLocalFavoriteCardsUseCase, disposeBag: DisposeBag) {
         self.getCardsUseCase = getCardsUseCase
         self.disposeBag = disposeBag
-        
         getFavoriteCards()
     }
     
@@ -38,17 +37,9 @@ final class ShowFavoriteCardsViewModel {
     
     func getFavoriteCards() {
         self.isFetching.accept(true)
-        getCardsUseCase.excute(results: "50") { (result) in
-            
-            switch result {
-            case .success(let people):
-                let favoriteCardViewModelList = people.map({FavoriteCardViewModel(personObject: $0)})
-                self.favoriteCardViewModelList.accept(favoriteCardViewModelList)
-            
-            case .failure( _):
-                self.favoriteCardViewModelList.accept([])
-            }
-            self.isFetching.accept(false)
-        }
+        let people = getCardsUseCase.excute()
+        let favoriteCardViewModelList = people.map({FavoriteCardViewModel(personObject: $0)})
+        self.favoriteCardViewModelList.accept(favoriteCardViewModelList)
+        self.isFetching.accept(false)
     }
 }

@@ -7,11 +7,16 @@
 
 import Foundation
 
-protocol CardsRepository {
-    func getListPeople(results: String!,
-                    completion:@escaping (Result<[PersonObject], Error>) ->Void)
-    
+protocol SaveCardRepository {
     func saveCardRepository(card: PersonObject) -> Bool!
+}
+
+protocol RemoteCardsRepository: SaveCardRepository {
+    func getListPeople(results: String!) async throws -> [PersonObject]
+}
+
+protocol LocalCardsRepository: SaveCardRepository {
+    func getListFavoritePeople() -> [PersonObject]
 }
 
 

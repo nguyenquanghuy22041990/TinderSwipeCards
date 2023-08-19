@@ -8,19 +8,17 @@
 import Foundation
 
 protocol GetLocalFavoriteCardsUseCase {
-    func excute(results: String!, completion: @escaping (Result<[PersonObject], Error>) -> Void)
+    func excute()-> [PersonObject]
 }
 
 final class DefaultGetLocalFavoriteCardsUseCase: GetLocalFavoriteCardsUseCase {
-    private let getCardsRepository: CardsRepository
+    private let getCardsRepository: LocalCardsRepository
     
-    init(getCardsRepository: CardsRepository) {
+    init(getCardsRepository: LocalCardsRepository) {
         self.getCardsRepository = getCardsRepository
     }
     
-    func excute(results: String!, completion: @escaping (Result<[PersonObject], Error>) -> Void) {
-        self.getCardsRepository.getListPeople(results: results, completion: completion)
+    func excute() -> [PersonObject] {
+        self.getCardsRepository.getListFavoritePeople()
     }
-    
-    
 }

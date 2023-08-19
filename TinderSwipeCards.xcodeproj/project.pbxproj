@@ -43,8 +43,8 @@
 		14D64A26256CB4B600993066 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A25256CB4B600993066 /* Repository.swift */; };
 		14D64A33256CFC7F00993066 /* AnyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A32256CFC7F00993066 /* AnyRepository.swift */; };
 		14D64A63256D094E00993066 /* PersonObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A62256D094E00993066 /* PersonObject.swift */; };
-		14D64A73256D3D8100993066 /* OnlineCardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A72256D3D8100993066 /* OnlineCardsRepository.swift */; };
-		14D64AB7256D3F7800993066 /* GetOnlineCardsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64AB6256D3F7800993066 /* GetOnlineCardsUseCase.swift */; };
+		14D64A73256D3D8100993066 /* DefaultRemoteCardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64A72256D3D8100993066 /* DefaultRemoteCardsRepository.swift */; };
+		14D64AB7256D3F7800993066 /* GetRemoteCardsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64AB6256D3F7800993066 /* GetRemoteCardsUseCase.swift */; };
 		14D64ABC256D40E900993066 /* ShowCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64ABB256D40E900993066 /* ShowCardsViewModel.swift */; };
 		14D64AC1256D421900993066 /* SaveCardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64AC0256D421900993066 /* SaveCardUseCase.swift */; };
 		14D64AE0256D56CD00993066 /* AlertWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D64ADF256D56CD00993066 /* AlertWrapper.swift */; };
@@ -122,8 +122,8 @@
 		14D64A25256CB4B600993066 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		14D64A32256CFC7F00993066 /* AnyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyRepository.swift; sourceTree = "<group>"; };
 		14D64A62256D094E00993066 /* PersonObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonObject.swift; sourceTree = "<group>"; };
-		14D64A72256D3D8100993066 /* OnlineCardsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineCardsRepository.swift; sourceTree = "<group>"; };
-		14D64AB6256D3F7800993066 /* GetOnlineCardsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOnlineCardsUseCase.swift; sourceTree = "<group>"; };
+		14D64A72256D3D8100993066 /* DefaultRemoteCardsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRemoteCardsRepository.swift; sourceTree = "<group>"; };
+		14D64AB6256D3F7800993066 /* GetRemoteCardsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRemoteCardsUseCase.swift; sourceTree = "<group>"; };
 		14D64ABB256D40E900993066 /* ShowCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCardsViewModel.swift; sourceTree = "<group>"; };
 		14D64AC0256D421900993066 /* SaveCardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCardUseCase.swift; sourceTree = "<group>"; };
 		14D64ADF256D56CD00993066 /* AlertWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWrapper.swift; sourceTree = "<group>"; };
@@ -323,7 +323,7 @@
 		1474A0F22568BE9A0000FB24 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				14D64AB6256D3F7800993066 /* GetOnlineCardsUseCase.swift */,
+				14D64AB6256D3F7800993066 /* GetRemoteCardsUseCase.swift */,
 				14D64AC0256D421900993066 /* SaveCardUseCase.swift */,
 				14D64B62256D71A600993066 /* GetLocalFavoriteCardsUseCase.swift */,
 			);
@@ -476,7 +476,7 @@
 		14D64A71256D3D5400993066 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				14D64A72256D3D8100993066 /* OnlineCardsRepository.swift */,
+				14D64A72256D3D8100993066 /* DefaultRemoteCardsRepository.swift */,
 				14D64B2D256D6B0E00993066 /* LocalFavoriteCardsRepository.swift */,
 			);
 			path = Repositories;
@@ -796,7 +796,7 @@
 				14D64B2E256D6B0E00993066 /* LocalFavoriteCardsRepository.swift in Sources */,
 				1474A1992568CE430000FB24 /* Login.swift in Sources */,
 				1474A1B12568D0160000FB24 /* Registered.swift in Sources */,
-				14D64A73256D3D8100993066 /* OnlineCardsRepository.swift in Sources */,
+				14D64A73256D3D8100993066 /* DefaultRemoteCardsRepository.swift in Sources */,
 				14D64A26256CB4B600993066 /* Repository.swift in Sources */,
 				14D64B89256D764300993066 /* ShowFavoriteCardsViewModel.swift in Sources */,
 				14737FDA25695B5F002612C2 /* SwipeCardView.swift in Sources */,
@@ -811,7 +811,7 @@
 				14D64AC1256D421900993066 /* SaveCardUseCase.swift in Sources */,
 				14D64AE0256D56CD00993066 /* AlertWrapper.swift in Sources */,
 				14D64B8F256D768F00993066 /* FavoriteCardViewModel.swift in Sources */,
-				14D64AB7256D3F7800993066 /* GetOnlineCardsUseCase.swift in Sources */,
+				14D64AB7256D3F7800993066 /* GetRemoteCardsUseCase.swift in Sources */,
 				1474A0F62568BEE50000FB24 /* CardsRepository.swift in Sources */,
 				1474A1BA2568D43B0000FB24 /* GetCardsResult.swift in Sources */,
 				1474A18D2568CDDD0000FB24 /* Timezone.swift in Sources */,

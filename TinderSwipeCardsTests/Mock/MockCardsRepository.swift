@@ -14,33 +14,48 @@ enum SimulatedCase {
     case didGetListCardsFailed
     case didTriggerNetworkErrorMessage
 }
-final class MockCardsRepository: CardsRepository {
+
+final class MockRemoteCardsRepository: RemoteCardsRepository {
     
     public var mockPersonObjectList: [PersonObject]! = []
     public var errorMessage: String! = "An error occurred"
     public var simulatedCase: SimulatedCase = .didTriggerNetworkErrorMessage
     
     public var didSaveCardSuccessfully: Bool! = true
-   
-    func getListPeople(results: String!,
-                       completion:@escaping (Result<[PersonObject], Error>) ->Void) {
+    
+    func getListPeople(results: String!) async throws -> [PersonObject] {
         switch simulatedCase {
             case .didTriggerNetworkErrorMessage:
-                completion(.failure(CustomError.networkError))
-            break
+            throw CustomError.networkError
                 
             case .didGetListCardsSuccessfully:
-                completion(.success(mockPersonObjectList))
-            break
+                return mockPersonObjectList
                 
-        case .didGetListCardsFailed:
-            completion(.failure(MockError.first(message: errorMessage)))
-        break
+            case .didGetListCardsFailed:
+                throw MockError.first(message: errorMessage)
+            
         }
-        
     }
     
     func saveCardRepository(card: PersonObject) -> Bool! {
         return didSaveCardSuccessfully
     }
 }
+
+final class MockLocalCardsRepository: LocalCardsRepository {
+    
+    public var mockPersonObjectList: [PersonObject]! = []
+    public var errorMessage: String! = "An error occurred"
+    public var simulatedCase: SimulatedCase = .didTriggerNetworkErrorMessage
+    
+    public var didSaveCardSuccessfully: Bool! = true
+    
+    func getListFavoritePeople() -> [PersonObject] {
+        return mockPersonObjectList
+    }
+    
+    func saveCardRepository(card: PersonObject) -> Bool! {
+        return didSaveCardSuccessfully
+    }
+}
+

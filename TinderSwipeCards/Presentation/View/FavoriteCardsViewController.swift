@@ -25,8 +25,10 @@ class FavoriteCardsViewController: UIViewController {
     }
     
     func setUpBinding() {        
-        self.showFavoriteCardsViewModel.favoriteCardViewModelList.subscribe(onNext: { (_) in
-            self.tableView.reloadData()
+        self.showFavoriteCardsViewModel.favoriteCardViewModelList.subscribe(onNext: { [unowned self](_) in
+            Task {
+                self.tableView.reloadData()
+            }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
         self.showFavoriteCardsViewModel.isFetching.subscribe(onNext: { (isFetching) in

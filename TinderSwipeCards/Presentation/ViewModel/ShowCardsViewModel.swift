@@ -39,7 +39,7 @@ final class ShowCardsViewModel {
     
     func getCards() {
         self.isFetching.accept(true)
-        getCardsUseCase.excute(result: "50") { (result) in
+        getCardsUseCase.excute(results: "50") { (result) in
             
             switch result {
             case .success(let people):

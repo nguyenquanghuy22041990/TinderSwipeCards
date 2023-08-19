@@ -8,7 +8,7 @@
 import Foundation
 
 protocol GetOnlineCardsUseCase {
-    func excute(result: String!, completion: @escaping (Result<[PersonObject], Error>) -> Void)
+    func excute(results: String!, completion: @escaping (Result<[PersonObject], Error>) -> Void)
 }
 
 final class DefaultGetOnlineCardsUseCase: GetOnlineCardsUseCase {
@@ -18,8 +18,8 @@ final class DefaultGetOnlineCardsUseCase: GetOnlineCardsUseCase {
         self.getCardsRepository = getCardsRepository
     }
     
-    func excute(result: String!, completion: @escaping (Result<[PersonObject], Error>) -> Void) {
-        self.getCardsRepository.getListPeople(results: result, completion: completion)
+    func excute(results: String!, completion: @escaping (Result<[PersonObject], Error>) -> Void) {
+        self.getCardsRepository.getListPeople(results: results, completion: completion)
     }
     
     

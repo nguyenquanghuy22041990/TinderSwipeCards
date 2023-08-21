@@ -70,7 +70,7 @@ class ShowCardsViewController: UIViewController {
 
         reloadButton.rx.tap.asDriver().drive(onNext: { [unowned self](_) in
             Task {
-             await  self.showCardsViewModel.getCards()
+             await self.showCardsViewModel.getCards()
             }
         }, onCompleted: nil, onDisposed: nil)
         .disposed(by: disposeBag)

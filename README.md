@@ -22,3 +22,7 @@ Koloda<br/>
 # Limitations
 
 -  UI Tests are only running well when network is available => Need find a third party to simulate a local host of calling API
+
+# Improvements
+
+- Change RxSwift to Combine

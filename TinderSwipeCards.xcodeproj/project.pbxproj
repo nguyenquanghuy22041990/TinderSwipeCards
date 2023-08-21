@@ -265,9 +265,6 @@
 		14737FAB25694F0E002612C2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1401EE23256800C400913645 /* ShowCardsViewController.swift */,
-				14737FAC25694F23002612C2 /* SwipeCardView.xib */,
-				14737FD925695B5F002612C2 /* SwipeCardView.swift */,
 				14D64B21256D662F00993066 /* FavoriteCardsViewController.swift */,
 				14D64B27256D682500993066 /* FavoritePersonTableViewCell.swift */,
 			);
@@ -293,8 +290,8 @@
 		14737FF625696014002612C2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				14737FFA25696026002612C2 /* ViewModel */,
-				14737FAB25694F0E002612C2 /* View */,
+				14E276BC2A930F1100D5BC88 /* ShowCardsScene */,
+				14E276BF2A930F6700D5BC88 /* FavoriteCardsScene */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -302,8 +299,6 @@
 		14737FFA25696026002612C2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				14737FFB25696089002612C2 /* SwipeCardViewModel.swift */,
-				14D64ABB256D40E900993066 /* ShowCardsViewModel.swift */,
 				14D64B88256D764300993066 /* ShowFavoriteCardsViewModel.swift */,
 				14D64B8E256D768F00993066 /* FavoriteCardViewModel.swift */,
 			);
@@ -480,6 +475,43 @@
 				14D64B2D256D6B0E00993066 /* LocalFavoriteCardsRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		14E276BC2A930F1100D5BC88 /* ShowCardsScene */ = {
+			isa = PBXGroup;
+			children = (
+				14E276BE2A930F5300D5BC88 /* ViewModel */,
+				14E276BD2A930F4500D5BC88 /* View */,
+			);
+			path = ShowCardsScene;
+			sourceTree = "<group>";
+		};
+		14E276BD2A930F4500D5BC88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1401EE23256800C400913645 /* ShowCardsViewController.swift */,
+				14737FAC25694F23002612C2 /* SwipeCardView.xib */,
+				14737FD925695B5F002612C2 /* SwipeCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14E276BE2A930F5300D5BC88 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				14737FFB25696089002612C2 /* SwipeCardViewModel.swift */,
+				14D64ABB256D40E900993066 /* ShowCardsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		14E276BF2A930F6700D5BC88 /* FavoriteCardsScene */ = {
+			isa = PBXGroup;
+			children = (
+				14737FFA25696026002612C2 /* ViewModel */,
+				14737FAB25694F0E002612C2 /* View */,
+			);
+			path = FavoriteCardsScene;
 			sourceTree = "<group>";
 		};
 		14E28220256A101E0089A571 /* Database */ = {
